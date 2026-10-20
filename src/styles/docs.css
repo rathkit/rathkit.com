@@ -1,0 +1,43 @@
+/* Maps the brand tokens onto Starlight's theme variables. */
+:root {
+  --sl-font: var(--rk-font-body);
+  --sl-font-mono: var(--rk-font-mono);
+  --sl-color-accent-low: #DBE6F7;
+  --sl-color-accent: #17408B;
+  --sl-color-accent-high: #0F2D63;
+  --sl-color-white: #0C1A2E;
+  --sl-color-gray-1: #1D2B42;
+  --sl-color-gray-2: #33435B;
+  --sl-color-gray-3: #526074;
+  --sl-color-gray-4: #8A97AA;
+  --sl-color-gray-5: #D3DAE4;
+  --sl-color-gray-6: #E6EBF2;
+  --sl-color-gray-7: #F3F5F8;
+  --sl-color-black: #FFFFFF;
+}
+:root[data-theme='dark'] {
+  --sl-color-accent-low: #0F2750;
+  --sl-color-accent: #6FA0E8;
+  --sl-color-accent-high: #B7D1F5;
+  --sl-color-white: #E7EDF6;
+  --sl-color-gray-1: #D3DAE4;
+  --sl-color-gray-2: #B2BCCB;
+  --sl-color-gray-3: #7E8CA3;
+  --sl-color-gray-4: #46556E;
+  --sl-color-gray-5: #213049;
+  --sl-color-gray-6: #0F1829;
+  --sl-color-black: #090F1B;
+}
+:root {
+  --sl-text-h1: 2.25rem;
+  --sl-text-h2: 1.6rem;
+  --sl-text-h3: 1.3rem;
+}
+code, pre, kbd, samp { font-variant-ligatures: none; }
+.pagination-links a { padding: 0.75rem 1rem; }
+.pagination-links .link-title { font-size: var(--sl-text-lg); line-height: 1.3; }
+h1, h2, h3, h4 {
+  font-family: var(--rk-font-display);
+  font-stretch: 112%;
+  letter-spacing: -0.01em;
+}

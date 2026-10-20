@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" role="img" aria-label="Rathkit">
+  <rect width="32" height="32" rx="6" fill="#17408B"/>
+<g transform="translate(-2.027 -0.640) scale(0.6933)">
+  <polygon points="22,24 30,24 44,42 35,42" fill="#E0A850"/>
+  <path fill="#FFFFFF" fill-rule="evenodd" d="M8 6H26A12 12 0 0 1 26 30H16V42H8Z M16 14H26A4 4 0 0 1 26 22H16Z"/>
+</g>
+</svg>

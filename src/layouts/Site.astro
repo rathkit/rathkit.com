@@ -1,0 +1,129 @@
+---
+import '../styles/fonts.css';
+import '../styles/brand.css';
+
+interface Props {
+  title: string;
+  description: string;
+}
+const { title, description } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="preload" href="/fonts/archivo-latin-wdth-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/instrument-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content="https://rathkit.com/og.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script is:inline>
+      // Shares the docs theme key so a choice made on either side carries over.
+      try {
+        var t = localStorage.getItem('starlight-theme');
+        if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t;
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="top">
+      <a class="brand" href="/" aria-label="Rathkit home">
+        <img class="lk lk-light" src="/brand/lockup.svg" alt="rathkit" width="164" height="31" />
+        <img class="lk lk-dark" src="/brand/lockup-dark.svg" alt="rathkit" width="164" height="31" />
+      </a>
+      <nav aria-label="Main">
+        <a href="/docs/">Docs</a>
+        <a href="https://github.com/rathkit">GitHub</a>
+        <button id="theme" type="button" aria-label="Toggle light and dark theme">
+          <i aria-hidden="true"></i><span>Theme</span>
+        </button>
+      </nav>
+    </header>
+    <main id="main"><slot /></main>
+    <footer>
+      <div class="foot">
+        <p>© 2026 Rathkit</p>
+        <ul>
+          <li><a href="https://github.com/rathkit">GitHub</a></li>
+          <li><a href="https://www.npmjs.com/org/rathkit">npm</a></li>
+          <li><a href="https://x.com/rathkit_dev">X</a></li>
+          <li><a href="https://bsky.app/profile/rathkit.com">Bluesky</a></li>
+        </ul>
+      </div>
+    </footer>
+    <script is:inline>
+      document.getElementById('theme').addEventListener('click', function () {
+        var root = document.documentElement;
+        var dark = root.dataset.theme
+          ? root.dataset.theme === 'dark'
+          : matchMedia('(prefers-color-scheme: dark)').matches;
+        var next = dark ? 'light' : 'dark';
+        root.dataset.theme = next;
+        try { localStorage.setItem('starlight-theme', next); } catch (e) {}
+      });
+    </script>
+  </body>
+</html>
+
+<style is:global>
+  *, *::before, *::after { box-sizing: border-box; }
+  html { color-scheme: light; }
+  :root[data-theme='dark'] { color-scheme: dark; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme='light']) { color-scheme: dark; } }
+  body {
+    margin: 0;
+    background: var(--rk-bg);
+    color: var(--rk-fg);
+    font-family: var(--rk-font-body);
+    font-size: 1rem;
+    line-height: 1.55;
+  }
+  h1, h2, h3 { font-family: var(--rk-font-display); font-stretch: 112%; letter-spacing: -0.01em; margin: 0; text-wrap: balance; }
+  p { margin: 0; }
+  a { color: var(--rk-mark); text-underline-offset: 3px; }
+  .skip { position: absolute; left: -999px; top: 8px; background: var(--rk-surface); color: var(--rk-fg); padding: 8px 12px; border: 1px solid var(--rk-line); z-index: 10; }
+  .skip:focus { left: 8px; }
+  .top {
+    max-width: 1080px; margin: 0 auto; padding: 20px 16px;
+    display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+  }
+  .top nav { display: flex; align-items: center; gap: 20px; }
+  .top nav a { color: var(--rk-fg); text-decoration: none; font-weight: 500; }
+  .top nav a:hover { color: var(--rk-mark); }
+  .brand { display: inline-flex; line-height: 0; }
+  .lk { height: 31px; width: auto; }
+  .lk-dark { display: none; }
+  :root[data-theme='dark'] .lk-light { display: none; }
+  :root[data-theme='dark'] .lk-dark { display: block; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme='light']) .lk-light { display: none; }
+    :root:not([data-theme='light']) .lk-dark { display: block; }
+  }
+  #theme {
+    display: inline-flex; align-items: center; gap: 8px; cursor: pointer;
+    background: var(--rk-surface); color: var(--rk-fg); border: 1px solid var(--rk-line);
+    padding: 6px 12px; font: 600 0.85rem var(--rk-font-display);
+  }
+  #theme i { width: 14px; height: 14px; display: block; border: 1px solid var(--rk-fg); background: linear-gradient(90deg, var(--rk-fg) 50%, transparent 50%); }
+  :focus-visible { outline: 2px solid var(--rk-brass); outline-offset: 2px; }
+  footer { border-top: 1px solid var(--rk-line); margin-top: 96px; }
+  .foot {
+    max-width: 1080px; margin: 0 auto; padding: 28px 16px;
+    display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; color: var(--rk-muted); font-size: 0.9rem;
+  }
+  .foot ul { display: flex; gap: 20px; list-style: none; margin: 0; padding: 0; }
+  .foot a { color: var(--rk-muted); }
+</style>

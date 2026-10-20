@@ -1,0 +1,88 @@
+---
+import Site from '../layouts/Site.astro';
+---
+
+<Site
+  title="Rathkit: built from scratch. Ships with nothing else."
+  description="Rathkit builds libraries and tools with no runtime dependencies. The first is RTE, a rich text editor. Open source, with paid premium options."
+>
+  <section class="hero">
+    <p class="eyebrow">Rathkit · RTE in development</p>
+    <h1>Built from scratch.<br />Ships with nothing else.</h1>
+    <p class="lede">
+      Rathkit builds libraries and tools with no runtime dependencies. The first is
+      RTE, a rich text editor with first-party wrappers for the major frameworks.
+      Open source, with paid premium options.
+    </p>
+    <div class="cta">
+      <a class="btn" href="/docs/">Read the docs</a>
+      <a class="btn o" href="https://github.com/rathkit">View on GitHub</a>
+    </div>
+  </section>
+
+  <section class="proof" aria-labelledby="proof-h">
+    <h2 id="proof-h" class="sr">What you install</h2>
+    <pre class="code"><code><span class="dim">$</span> npm ls --omit=dev
+<span class="dim">(empty)</span></code></pre>
+    <p class="caption">Nothing in the box you didn't ask for.</p>
+    <p class="note">
+      This is the target for every Rathkit package. RTE is pre-release, so nothing is
+      published yet.
+    </p>
+  </section>
+
+  <section class="points" aria-label="Principles">
+    <article>
+      <h3>No runtime dependencies</h3>
+      <p>
+        Every package is written in-house. No dependency tree to audit, and nothing
+        for an attacker to slip into between your lockfile and your users.
+      </p>
+    </article>
+    <article>
+      <h3>Pick only what you use</h3>
+      <p>
+        A small core, with features as separate plugin packages and thin wrappers for
+        each framework. You ship only what you import.
+      </p>
+    </article>
+    <article>
+      <h3>Open source, paid premium</h3>
+      <p>
+        The core and wrappers are open source. Premium packages are delivered
+        separately, with licences that verify offline.
+      </p>
+    </article>
+  </section>
+</Site>
+
+<style>
+  .hero, .proof, .points { max-width: 1080px; margin: 0 auto; padding-inline: 16px; }
+  .hero { padding-top: 56px; display: flex; flex-direction: column; gap: 24px; }
+  .eyebrow { font: 500 0.75rem var(--rk-font-mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--rk-brass-ink); }
+  h1 { font-size: clamp(2.4rem, 7vw, 4.4rem); font-weight: 800; line-height: 1.02; }
+  .lede { font-size: 1.15rem; color: var(--rk-muted); max-width: 66ch; text-wrap: pretty; }
+  .cta { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn {
+    display: inline-block; padding: 10px 18px; text-decoration: none;
+    font: 700 0.9rem var(--rk-font-display);
+    background: var(--rk-mark); color: var(--rk-on-mark); border: 1px solid var(--rk-mark);
+  }
+  .btn.o { background: transparent; color: var(--rk-fg); border-color: var(--rk-line); }
+  .btn:hover { filter: brightness(1.08); }
+  .proof { padding-top: 56px; display: flex; flex-direction: column; gap: 16px; }
+  .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+  .code {
+    margin: 0; background: var(--rk-sunk); border: 1px solid var(--rk-line);
+    padding: 16px 18px; font: 0.95rem/1.6 var(--rk-font-mono); overflow-x: auto; max-width: 520px;
+  }
+  .dim { color: var(--rk-muted); }
+  .caption { font: 700 1.2rem var(--rk-font-display); font-stretch: 112%; }
+  .note { color: var(--rk-muted); font-size: 0.9rem; max-width: 72ch; text-wrap: pretty; }
+  .points {
+    padding-top: 72px; display: grid; gap: 16px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  }
+  .points article { background: var(--rk-surface); border: 1px solid var(--rk-line); padding: 22px; display: flex; flex-direction: column; gap: 10px; }
+  .points p { color: var(--rk-muted); text-wrap: pretty; }
+</style>

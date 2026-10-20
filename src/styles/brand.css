@@ -1,0 +1,29 @@
+/* Brand tokens shared by the marketing pages and the docs. Light is the default;
+   dark applies from the system setting, or from data-theme set by the toggle. */
+:root {
+  --rk-bg: #F3F5F8;
+  --rk-surface: #FFFFFF;
+  --rk-fg: #0C1A2E;
+  --rk-muted: #526074;
+  --rk-line: #D3DAE4;
+  --rk-sunk: #E6EBF2;
+  --rk-mark: #17408B;
+  --rk-on-mark: #FFFFFF;
+  --rk-brass: #B9812A;
+  --rk-brass-ink: #86590F;
+  --rk-font-display: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
+  --rk-font-body: 'Instrument Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --rk-font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --rk-bg: #090F1B; --rk-surface: #0F1829; --rk-fg: #E7EDF6; --rk-muted: #93A0B5;
+    --rk-line: #213049; --rk-sunk: #0B1322; --rk-mark: #6FA0E8; --rk-on-mark: #090F1B;
+    --rk-brass: #E0A850; --rk-brass-ink: #E0A850;
+  }
+}
+:root[data-theme='dark'] {
+  --rk-bg: #090F1B; --rk-surface: #0F1829; --rk-fg: #E7EDF6; --rk-muted: #93A0B5;
+  --rk-line: #213049; --rk-sunk: #0B1322; --rk-mark: #6FA0E8; --rk-on-mark: #090F1B;
+  --rk-brass: #E0A850; --rk-brass-ink: #E0A850;
+}
