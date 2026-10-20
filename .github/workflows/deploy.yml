@@ -1,0 +1,55 @@
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'List what would change without uploading'
+        type: boolean
+        default: true
+
+permissions:
+  contents: read
+
+concurrency:
+  group: deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      ASTRO_TELEMETRY_DISABLED: '1'
+      FTP_HOST: ${{ secrets.FTP_HOST }}
+      FTP_USER: ${{ secrets.FTP_USER }}
+      FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+    steps:
+      # Actions are pinned to full commit SHAs (v7.0.1 and v7.1.0).
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1
+        with:
+          node-version: '26'
+      - name: Install pnpm
+        run: npm install --global --ignore-scripts pnpm@12.14.0
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile --ignore-scripts
+      - name: Build
+        run: pnpm build
+      - name: Upload over FTPS
+        if: ${{ env.FTP_HOST != '' && env.FTP_USER != '' && env.FTP_PASSWORD != '' }}
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq lftp
+          flags="--reverse --delete --verbose --parallel=2"
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.dry_run }}" = "true" ]; then
+            flags="$flags --dry-run"
+          fi
+          # The FTP account must be restricted to public_html. Excludes keep host-managed paths
+          # (certificate validation files, cgi-bin, error logs) out of --delete.
+          lftp -u "$FTP_USER,$FTP_PASSWORD" "$FTP_HOST" -e "set ftp:ssl-force true; set ftp:ssl-protect-data true; set ssl:verify-certificate yes; set net:max-retries 3; mirror $flags --exclude-glob .well-known/ --exclude-glob cgi-bin/ --exclude-glob error_log dist /; bye"
+      - name: Skipped upload
+        if: ${{ env.FTP_HOST == '' || env.FTP_USER == '' || env.FTP_PASSWORD == '' }}
+        run: echo "FTP secrets are not set; build succeeded, nothing uploaded."
