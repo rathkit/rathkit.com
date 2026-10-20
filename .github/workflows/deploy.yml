@@ -43,13 +43,17 @@ jobs:
         if: ${{ env.FTP_HOST != '' && env.FTP_USER != '' && env.FTP_PASSWORD != '' }}
         run: |
           sudo apt-get update -qq && sudo apt-get install -y -qq lftp
-          flags="--reverse --delete --verbose --parallel=2"
+          flags="--reverse --delete --parallel=2"
           if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.dry_run }}" = "true" ]; then
             flags="$flags --dry-run"
           fi
           # The FTP account is restricted to this domain's folder. Excludes keep host-managed paths
           # (certificate validation files, cgi-bin, error logs, FTP quota and PHP settings) out of --delete.
-          lftp -u "$FTP_USER,$FTP_PASSWORD" "$FTP_HOST" -e "set ftp:ssl-force true; set ftp:ssl-protect-data true; set ssl:verify-certificate yes; set net:max-retries 3; mirror $flags --exclude-glob .well-known/ --exclude-glob cgi-bin/ --exclude-glob error_log --exclude-glob .ftpquota --exclude-glob .user.ini --exclude-glob php.ini dist /; bye"
+          # lftp prints each transfer as a URL that includes the password in URL-encoded form,
+          # which GitHub's secret masking does not recognise. Redact credentials from all output.
+          set -o pipefail
+          lftp -u "$FTP_USER,$FTP_PASSWORD" "$FTP_HOST" -e "set ftp:ssl-force true; set ftp:ssl-protect-data true; set ssl:verify-certificate yes; set net:max-retries 3; mirror $flags --exclude-glob .well-known/ --exclude-glob cgi-bin/ --exclude-glob error_log --exclude-glob .ftpquota --exclude-glob .user.ini --exclude-glob php.ini dist /; bye" 2>&1 \
+            | sed -E 's#(ftps?://)[^/ ]*@#\1REDACTED@#g'
       - name: Skipped upload
         if: ${{ env.FTP_HOST == '' || env.FTP_USER == '' || env.FTP_PASSWORD == '' }}
         run: echo "FTP secrets are not set; build succeeded, nothing uploaded."
