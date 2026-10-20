@@ -47,9 +47,9 @@ jobs:
           if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.dry_run }}" = "true" ]; then
             flags="$flags --dry-run"
           fi
-          # The FTP account must be restricted to public_html. Excludes keep host-managed paths
-          # (certificate validation files, cgi-bin, error logs) out of --delete.
-          lftp -u "$FTP_USER,$FTP_PASSWORD" "$FTP_HOST" -e "set ftp:ssl-force true; set ftp:ssl-protect-data true; set ssl:verify-certificate yes; set net:max-retries 3; mirror $flags --exclude-glob .well-known/ --exclude-glob cgi-bin/ --exclude-glob error_log dist /; bye"
+          # The FTP account is restricted to this domain's folder. Excludes keep host-managed paths
+          # (certificate validation files, cgi-bin, error logs, FTP quota and PHP settings) out of --delete.
+          lftp -u "$FTP_USER,$FTP_PASSWORD" "$FTP_HOST" -e "set ftp:ssl-force true; set ftp:ssl-protect-data true; set ssl:verify-certificate yes; set net:max-retries 3; mirror $flags --exclude-glob .well-known/ --exclude-glob cgi-bin/ --exclude-glob error_log --exclude-glob .ftpquota --exclude-glob .user.ini --exclude-glob php.ini dist /; bye"
       - name: Skipped upload
         if: ${{ env.FTP_HOST == '' || env.FTP_USER == '' || env.FTP_PASSWORD == '' }}
         run: echo "FTP secrets are not set; build succeeded, nothing uploaded."
