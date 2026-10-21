@@ -21,6 +21,9 @@ Everything in the `@rathkit/*` packages is free and licensed under
 - the wrappers for each supported framework
 - the standard plugins: text formatting, headings, lists, links, images, tables,
   paste handling, undo and redo, and accessibility support
+- paste handling that turns the standard HTML on the clipboard into correct,
+  safe content, including cleaning up what Word, Google Docs and similar apps add,
+  so lists, links, headings and tables come through intact
 - the reference server package, `rte-server`
 - the license verifier, `rte-license`, so you can read exactly what it checks
 - security, correctness and accessibility fixes in the current release, for every
@@ -37,7 +40,9 @@ service for RTE and have no plans to, so nothing paid depends on one. Everything
 runs in your app or on servers you control. We will only charge for things that
 cost us ongoing effort or that mainly serve larger organizations:
 
-- premium plugins that run in your app or on your own servers
+- premium plugins that run in your app or on your own servers, including paste
+  extras that recover what standard clipboard HTML does not carry, such as
+  spreadsheet formatting and typed cell values
 - support with response-time commitments, and long-term-support branches
 - delivery and compliance extras for enterprise teams, such as offline bundles and
   security questionnaires
