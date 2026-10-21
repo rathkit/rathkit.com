@@ -29,7 +29,6 @@ ErrorDocument 404 /404.html
   Header always set Referrer-Policy "strict-origin-when-cross-origin"
   Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
 
-  # Report-Only until the docs and search are confirmed clean in the browser console.
-  # Then rename to Content-Security-Policy to enforce it.
-  Header always set Content-Security-Policy-Report-Only "__CSP__"
+  # Enforced after the docs, search and theme toggle showed no violations in a clean browser profile.
+  Header always set Content-Security-Policy "__CSP__"
 </IfModule>
