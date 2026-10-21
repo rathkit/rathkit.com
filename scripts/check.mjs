@@ -31,7 +31,9 @@ for (const [url, html] of pages) {
   if (!/<title>[^<]{3,}<\/title>/.test(html)) fail(`${url}: missing title`);
   if (!/<meta name="description" content="[^"]{20,}"/.test(html)) fail(`${url}: missing or short description`);
   if (!/<link rel="canonical" href="https:\/\/rathkit\.com/.test(html)) fail(`${url}: missing canonical`);
-  if (!/<meta property="og:image"/.test(html)) fail(`${url}: missing og:image`);
+  const og = html.match(/<meta property="og:image" content="https:\/\/rathkit\.com(\/[^"]+)"/);
+  if (!og) fail(`${url}: missing og:image`);
+  else if (!existsSync(join(dist, og[1]))) fail(`${url}: og:image file not found: ${og[1]}`);
   const h1 = (html.match(/<h1\b/g) || []).length;
   if (h1 !== 1) fail(`${url}: ${h1} h1 elements`);
   for (const [tag] of html.matchAll(/<img\b[^>]*>/g)) {

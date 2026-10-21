@@ -27,7 +27,10 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
-    <meta property="og:image" content="https://rathkit.com/og.png" />
+    <meta property="og:image" content="https://rathkit.com/og/home.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="rathkit. Built from scratch. Ships with nothing else." />
     <meta name="twitter:card" content="summary_large_image" />
     <script is:inline>
       // Shares the docs theme key so a choice made on either side carries over.
