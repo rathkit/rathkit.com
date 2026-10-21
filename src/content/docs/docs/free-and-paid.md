@@ -1,0 +1,68 @@
+---
+title: Free and paid
+description: What Rathkit RTE will always include for free, what may cost money, and the rules we hold ourselves to.
+---
+
+RTE is open source with paid options. This page says in advance where that line
+sits, so nothing you rely on can later move behind a paywall.
+
+:::caution[Pre-release]
+Nothing is published yet and there are no paid products. This page is a
+statement of intent that we will keep stable. There are no prices here because
+none have been set.
+:::
+
+## Free forever
+
+Everything in the `@rathkit/*` packages is free and licensed under
+[Apache-2.0](https://www.apache.org/licenses/LICENSE-2.0). That includes:
+
+- the editor core and its document model
+- the wrappers for each supported framework
+- the standard plugins: text formatting, headings, lists, links, images, tables,
+  paste handling, undo and redo, and accessibility support
+- the reference server package, `rte-server`
+- the licence verifier, `rte-license`, so you can read exactly what it checks
+- security, correctness and accessibility fixes in the current release, for every
+  user
+- provenance, checksums and an SBOM on every release
+
+If a capability is on this list, or ships in a free package, it stays free. We will
+not move an existing free feature into a paid package.
+
+## What may be paid
+
+Paid options will be separate `@rathkit-pro/*` packages and services. We will only
+charge for things that cost us ongoing effort or that mainly serve larger
+organisations:
+
+- plugins that depend on a service we run or operate on your behalf
+- support with response-time commitments, and long-term-support branches
+- delivery and compliance extras for enterprise teams, such as offline bundles and
+  security questionnaires
+
+Which of these exist, how they are packaged and what they cost are not decided.
+When they are, they will be listed on this site with their terms.
+
+## Rules we hold ourselves to
+
+1. **The free core never depends on paid code.** No free package imports a paid
+   one.
+2. **Paid plugins use the public plugin API.** They get no private hooks, so you or
+   anyone else can write an equivalent plugin.
+3. **Safety is not for sale.** Security, correctness and accessibility fixes are
+   never limited to a paid tier.
+4. **Nothing disappears on you.** If a paid licence lapses, software you already
+   deployed keeps working. Only newer paid releases stop being covered, and the
+   free editor keeps working throughout.
+5. **No phoning home.** Licence checks run offline in your own environment. Telemetry
+   is a separate package that is off unless you install and configure it.
+6. **Changes are announced.** If we ever change this page, we say what changed and
+   why, here on this site, and releases already published keep their licence.
+
+## What this page is not
+
+It is not a contract. The licence text in each repository governs the code, and any
+paid product will have its own written terms. If you need a commitment in writing
+for your organisation, contact us at
+[hello@rathkit.com](mailto:hello@rathkit.com).
