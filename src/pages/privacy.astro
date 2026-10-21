@@ -1,0 +1,65 @@
+---
+import Site from '../layouts/Site.astro';
+---
+
+<Site
+  title="Privacy | Rathkit"
+  description="What rathkit.com collects (nothing through the page), what your browser stores, and what happens when you email us."
+>
+  <article class="doc">
+    <p class="eyebrow">Privacy</p>
+    <h1>This site collects nothing about you.</h1>
+    <p class="lede">
+      This page covers rathkit.com and its docs. It is short because there is little to say. Last updated October 21, 2026.
+    </p>
+
+    <h2>What the site does not do</h2>
+    <ul>
+      <li>No analytics, advertising or tracking scripts.</li>
+      <li>No cookies.</li>
+      <li>No forms, accounts or sign-in.</li>
+      <li>No requests to other sites. Fonts, images and scripts all come from rathkit.com.</li>
+    </ul>
+
+    <h2>What your browser stores</h2>
+    <p>
+      One thing: your light or dark theme choice, in your browser's local storage under the key <code>starlight-theme</code>. It stays on your device and is never sent to us. Clear your site data to remove it.
+    </p>
+
+    <h2>Search</h2>
+    <p>
+      Docs search runs in your browser against an index served as static files. What you type is not sent anywhere.
+    </p>
+
+    <h2>Server logs</h2>
+    <p>
+      Our hosting provider keeps standard server logs, such as the time, the address requested, your IP address and your browser's user agent, to run and secure the service. It does so under its own policy. We do not add analytics to them or use them to track visitors.
+    </p>
+
+    <h2>If you email us</h2>
+    <p>
+      If you write to <a href="mailto:hello@rathkit.com">hello@rathkit.com</a> or another rathkit.com address, we receive your email address and what you write, and use it to reply. We do not sell it or add you to a mailing list. Mail for rathkit.com is handled by the same hosting provider.
+    </p>
+
+    <h2>Links to other sites</h2>
+    <p>
+      The links to GitHub, npm, X and Bluesky lead to services with their own privacy policies.
+    </p>
+
+    <h2>Changes</h2>
+    <p>
+      If this changes, we update this page and its date. Questions: <a href="mailto:hello@rathkit.com">hello@rathkit.com</a>.
+    </p>
+  </article>
+</Site>
+
+<style>
+  .doc { max-width: 760px; margin: 0 auto; padding: 56px 16px 0; display: flex; flex-direction: column; gap: 14px; }
+  .eyebrow { font: 500 0.75rem var(--rk-font-mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--rk-brass-ink); }
+  h1 { font-size: clamp(2rem, 5.5vw, 3.2rem); font-weight: 800; line-height: 1.05; }
+  .lede { font-size: 1.1rem; color: var(--rk-muted); text-wrap: pretty; }
+  h2 { font-size: 1.3rem; font-weight: 800; margin-top: 22px; }
+  p, li { text-wrap: pretty; }
+  ul { margin: 0; padding-left: 1.1rem; display: flex; flex-direction: column; gap: 6px; }
+  code { font-family: var(--rk-font-mono); font-size: 0.9em; background: var(--rk-sunk); padding: 1px 5px; }
+</style>

@@ -44,6 +44,8 @@ See `README.md`. You need Node 26 and pnpm 12.
 
 ## License
 
-The license for this repository's content and code has not been set yet. The
-Rathkit name, logo and brand artwork are not licensed for reuse. Libraries are
-licensed under Apache-2.0 in their own repositories.
+Code and written content in this repository are licensed under
+[Apache-2.0](LICENSE). The Rathkit name, logo and brand artwork are not covered by that
+license and are not licensed for reuse; see [TRADEMARKS.md](TRADEMARKS.md). The fonts
+carry their own licenses in `public/fonts/`. By contributing you agree your contribution
+is licensed under Apache-2.0.

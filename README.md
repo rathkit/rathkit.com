@@ -64,6 +64,11 @@ a published claim on the Security page, so update that page too.
 - Pages about RTE describe planned behavior as planned until it ships.
 - Do not name or compare with other products.
 
+## License
+
+Apache-2.0 (see `LICENSE`) for the code and written content. The Rathkit name, logo and
+artwork are excluded; see `TRADEMARKS.md`.
+
 ## Brand assets
 
 The brand source files are kept outside this repository. This repo holds only the
