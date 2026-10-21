@@ -32,11 +32,12 @@ not move an existing free feature into a paid package.
 
 ## What may be paid
 
-Paid options will be separate `@rathkit-pro/*` packages and services. We will only
-charge for things that cost us ongoing effort or that mainly serve larger
-organizations:
+Paid options will be separate `@rathkit-pro/*` packages. We do not run a hosted
+service for RTE and have no plans to, so nothing paid depends on one. Everything
+runs in your app or on servers you control. We will only charge for things that
+cost us ongoing effort or that mainly serve larger organizations:
 
-- plugins that depend on a service we run or operate on your behalf
+- premium plugins that run in your app or on your own servers
 - support with response-time commitments, and long-term-support branches
 - delivery and compliance extras for enterprise teams, such as offline bundles and
   security questionnaires
