@@ -17,7 +17,7 @@ client-side JavaScript: the theme toggle, and search on the docs.
 
 `pnpm check` reads the built pages and fails on a missing title, description or
 canonical, anything other than one `h1`, an image without `alt`, a broken
-internal link or anchor, and brand text colours below 4.5:1 contrast in either
+internal link or anchor, and brand text colors below 4.5:1 contrast in either
 theme.
 
 ## Layout
@@ -61,7 +61,7 @@ a published claim on the Security page, so update that page too.
 
 - Claims must be checkable: no invented APIs, prices or numbers, and no compliance
   claims we do not hold.
-- Pages about RTE describe planned behaviour as planned until it ships.
+- Pages about RTE describe planned behavior as planned until it ships.
 - Do not name or compare with other products.
 
 ## Brand assets

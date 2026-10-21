@@ -51,7 +51,7 @@ You can check these from your browser's developer tools.
 
 - We do not claim SOC 2 or FedRAMP status. Neither is held today. If that changes,
   the claim will name the report, the systems it covers and the date. SOC 2 is a
-  report about an organisation's systems, not a certificate on a library, and
+  report about an organization's systems, not a certificate on a library, and
   FedRAMP applies to cloud services, not client-side software.
 - We do not claim zero risk.
 
@@ -59,7 +59,7 @@ You can check these from your browser's developer tools.
 
 Once the repositories are public, use GitHub's private vulnerability reporting
 (the **Report a vulnerability** button under the **Security** tab of the affected
-repository in the [rathkit organisation](https://github.com/rathkit)). It reaches the
+repository in the [rathkit organization](https://github.com/rathkit)). It reaches the
 maintainers privately and keeps the report, the discussion and any advisory in one
 place.
 

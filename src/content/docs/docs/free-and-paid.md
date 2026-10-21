@@ -22,7 +22,7 @@ Everything in the `@rathkit/*` packages is free and licensed under
 - the standard plugins: text formatting, headings, lists, links, images, tables,
   paste handling, undo and redo, and accessibility support
 - the reference server package, `rte-server`
-- the licence verifier, `rte-license`, so you can read exactly what it checks
+- the license verifier, `rte-license`, so you can read exactly what it checks
 - security, correctness and accessibility fixes in the current release, for every
   user
 - provenance, checksums and an SBOM on every release
@@ -34,7 +34,7 @@ not move an existing free feature into a paid package.
 
 Paid options will be separate `@rathkit-pro/*` packages and services. We will only
 charge for things that cost us ongoing effort or that mainly serve larger
-organisations:
+organizations:
 
 - plugins that depend on a service we run or operate on your behalf
 - support with response-time commitments, and long-term-support branches
@@ -52,17 +52,17 @@ When they are, they will be listed on this site with their terms.
    anyone else can write an equivalent plugin.
 3. **Safety is not for sale.** Security, correctness and accessibility fixes are
    never limited to a paid tier.
-4. **Nothing disappears on you.** If a paid licence lapses, software you already
+4. **Nothing disappears on you.** If a paid license lapses, software you already
    deployed keeps working. Only newer paid releases stop being covered, and the
    free editor keeps working throughout.
-5. **No phoning home.** Licence checks run offline in your own environment. Telemetry
+5. **No phoning home.** License checks run offline in your own environment. Telemetry
    is a separate package that is off unless you install and configure it.
 6. **Changes are announced.** If we ever change this page, we say what changed and
-   why, here on this site, and releases already published keep their licence.
+   why, here on this site, and releases already published keep their license.
 
 ## What this page is not
 
-It is not a contract. The licence text in each repository governs the code, and any
+It is not a contract. The license text in each repository governs the code, and any
 paid product will have its own written terms. If you need a commitment in writing
-for your organisation, contact us at
+for your organization, contact us at
 [hello@rathkit.com](mailto:hello@rathkit.com).

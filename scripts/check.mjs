@@ -1,5 +1,5 @@
 // Checks the built site in dist/: page metadata, internal links and anchors, image alt text,
-// and WCAG contrast for the brand text colours. Node built-ins only. Run after `pnpm build`.
+// and WCAG contrast for the brand text colors. Node built-ins only. Run after `pnpm build`.
 import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 
@@ -46,7 +46,7 @@ for (const [url, html] of pages) {
   }
 }
 
-// Contrast of text colours against the surfaces they sit on, light and dark.
+// Contrast of text colors against the surfaces they sit on, light and dark.
 const lum = (hex) => {
   const [r, g, b] = [1, 3, 5].map((i) => parseInt(hex.slice(i, i + 2), 16) / 255)
     .map((c) => (c <= 0.03928 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4));

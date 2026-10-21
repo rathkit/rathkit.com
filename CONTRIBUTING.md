@@ -33,7 +33,7 @@ See `README.md`. You need Node 26 and pnpm 12.
   installed with scripts disabled. Explain why a new one is needed.
 - **Accessible by default.** Keep one `h1` per page, give images alt text, and keep
   text contrast at 4.5:1 or better in both themes.
-- **Brand tokens, not new colours.** Use the `--rk-*` variables in
+- **Brand tokens, not new colors.** Use the `--rk-*` variables in
   `src/styles/brand.css`.
 
 ## Pull requests
@@ -42,8 +42,8 @@ See `README.md`. You need Node 26 and pnpm 12.
 - Describe what changed and why, and say how you checked it.
 - Sign your commits.
 
-## Licence
+## License
 
-The licence for this repository's content and code has not been set yet. The
+The license for this repository's content and code has not been set yet. The
 Rathkit name, logo and brand artwork are not licensed for reuse. Libraries are
 licensed under Apache-2.0 in their own repositories.
