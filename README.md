@@ -64,6 +64,11 @@ a published claim on the Security page, so update that page too.
 - Pages about RTE describe planned behavior as planned until it ships.
 - Do not name or compare with other products.
 
+## Community
+
+Questions and discussion happen on [Discord](https://discord.gg/A5VBxgPaex). It is best-effort and
+not a support commitment.
+
 ## License
 
 Apache-2.0 (see `LICENSE`) for the code and written content. The Rathkit name, logo and
