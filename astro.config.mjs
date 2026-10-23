@@ -22,6 +22,7 @@ export default defineConfig({
         { icon: 'github', label: 'GitHub', href: 'https://github.com/rathkit' },
         { icon: 'x.com', label: 'X', href: 'https://x.com/rathkit_dev' },
         { icon: 'blueSky', label: 'Bluesky', href: 'https://bsky.app/profile/rathkit.com' },
+        { icon: 'discord', label: 'Discord', href: 'https://discord.gg/A5VBxgPaex' },
       ],
       routeMiddleware: './src/routeData.ts',
       sidebar: [{ autogenerate: { directory: 'docs' } }],
