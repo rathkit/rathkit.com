@@ -63,5 +63,11 @@ repository in the [rathkit organization](https://github.com/rathkit)). It reache
 maintainers privately and keeps the report, the discussion and any advisory in one
 place.
 
+If a repository does not show that button, email
+[github@rathkit.com](mailto:github@rathkit.com) with the subject
+`Security: <repository name>`. The same instructions are in the organization's
+[security policy](https://github.com/rathkit/.github/blob/main/SECURITY.md), which
+applies to every Rathkit repository, including Pack.
+
 Until then there is no software to report against. Please do not post suspected
 vulnerabilities in public issues.
