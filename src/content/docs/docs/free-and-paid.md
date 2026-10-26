@@ -19,8 +19,17 @@ Everything in the `@rathkit/*` packages is free and licensed under
 
 - the editor core and its document model
 - the wrappers for each supported framework
-- the standard plugins: text formatting, headings, lists, links, images, tables,
-  paste handling, undo and redo, and accessibility support
+- the standard plugins: text formatting, headings, lists (including task lists),
+  links, images, tables, paste handling, undo and redo, and accessibility support
+- typed shortcuts: `# ` for headings, `> ` for a quote, three backticks for a code
+  block, `**bold**`, `*italic*`, `~~strike~~` and `` `code` `` formatting, and web
+  addresses that become links, each kind switchable off
+- table sorting by column, row heights, per-side cell borders and dragging to select
+  a block of cells
+- images you can select, resize by dragging a corner or in a properties dialog, place
+  beside text or centered, and caption
+- find and replace, an HTML source view, text direction, indent, a symbols menu, and a
+  status line with word and character counts
 - paste handling that turns the standard HTML on the clipboard into correct,
   safe content, including cleaning up what Word, Google Docs and similar apps add,
   so lists, links, headings and tables come through intact
