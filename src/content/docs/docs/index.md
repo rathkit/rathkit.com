@@ -29,9 +29,10 @@ None of these is published yet, and their APIs will change.
 | `@rathkit/rte-react` | React component and hooks |
 | `@rathkit/rte-vue` | Vue component and composables |
 | `@rathkit/rte-svelte` | Svelte stores and an action |
+| `@rathkit/rte-angular` | Angular directive, signals and a forms value accessor |
 | `@rathkit/rte-jquery` | `$(el).rkEditor(options)` over the custom element |
 
-Still to come: an Angular wrapper and the reference server package, `rte-server`.
+Still to come: the reference server package, `rte-server`.
 
 Open-source packages live under the `@rathkit` scope on npm. Premium packages
 use a separate scope and are delivered from a private registry.
