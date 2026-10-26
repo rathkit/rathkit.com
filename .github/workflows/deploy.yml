@@ -26,15 +26,17 @@ jobs:
       FTP_USER: ${{ secrets.FTP_USER }}
       FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
     steps:
-      # Actions are pinned to full commit SHAs (v7.0.1 and v7.1.0).
+      # Actions are pinned to full commit SHAs (checkout v7.0.1; pnpm/setup at the one commit the organization allows).
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:
           persist-credentials: false
-      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1
+      # pnpm and Node in one step; the install is its own step so that it runs without install scripts.
+      - uses: pnpm/setup@a0881977cd8ea73b1ed212236c99ca10dcc80cf4
         with:
-          node-version: '26'
-      - name: Install pnpm
-        run: npm install --global --ignore-scripts pnpm@12.14.0
+          runtime: node@26
+          cache: true
+          require-lockfile: true
+          install: false
       - name: Install dependencies
         run: pnpm install --frozen-lockfile --ignore-scripts
       - name: Build
