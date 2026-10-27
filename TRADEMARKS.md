@@ -1,9 +1,8 @@
 # Rathkit name and artwork
 
-The Rathkit name and artwork belong to Rathkit LLC. The code and written content in this
-repository are licensed under Apache-2.0 (see `LICENSE`). That license does not cover the Rathkit name, the logo and wordmark,
-the favicon and social cards, or any other brand artwork. These files are the brand
-artwork:
+The code and written content in this repository are licensed under Apache-2.0 (see
+`LICENSE`). That license does not cover the Rathkit name, the logo and wordmark, the
+favicon and social cards, or any other brand artwork. These files are the brand artwork:
 
 - `src/assets/lockup.svg` and `src/assets/lockup-dark.svg`
 - `public/brand/`

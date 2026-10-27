@@ -2,7 +2,7 @@
 
 This repository is the Rathkit website and documentation, not the libraries. Each library has its own repository and its own contributing page. This page is the whole process, in the order you will meet it.
 
-**Status: pre-alpha.** We take outside pull requests only once both of these are true: this repository is public, and the first alpha release is published. A pull request sent before then may be closed without review. Questions are welcome on Discord (see the end of this page).
+**Status: pre-alpha.** Fixes to typos, broken links and unclear or wrong wording are welcome now. For anything larger, open an issue first and wait for the `accepted` label. Questions are welcome on Discord (see the end of this page).
 
 ## The short version
 
@@ -131,8 +131,8 @@ Do not report security problems in issues. Follow the [security policy](https://
 ## License
 
 By contributing you certify the [DCO](DCO) and agree that your contribution is licensed under the
-same license as the project, Apache-2.0 (see [LICENSE](LICENSE)). Copyright in the project belongs
-to Rathkit LLC, see [NOTICE](NOTICE). You keep the copyright in your own contribution. The Rathkit
+same license as the project, Apache-2.0 (see [LICENSE](LICENSE)). The copyright holder is named
+in [NOTICE](NOTICE). You keep the copyright in your own contribution. The Rathkit
 name, logo and brand artwork are not covered by that license, see [TRADEMARKS.md](TRADEMARKS.md). The
 fonts carry their own licenses in `public/fonts/`.
 
