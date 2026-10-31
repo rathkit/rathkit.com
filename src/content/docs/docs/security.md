@@ -3,16 +3,19 @@ title: Security
 description: What Rathkit commits to for its software and this site, what we do not claim, and how to report a vulnerability.
 ---
 
-RTE is pre-release. This page separates what is true of this site today from what
-the libraries are being built to. We will update it when packages ship, and we only
-list claims you can check.
+RTE's first alpha is on npm and Pack is not released. This page separates what is true
+of this site and of the published RTE packages from what we hold ourselves to for
+everything we ship, and we only list claims you can check. [Verify a release](/docs/verify/)
+shows how.
 
 ## The libraries: commitments
 
-These are release gates for every Rathkit package, not features you can install yet.
+These are release gates for every Rathkit package. The RTE alpha is the first to be held to them.
 
-- **No runtime dependencies.** `npm ls --omit=dev` is empty. Wrapper packages may
-  declare the host framework as an optional peer.
+- **No runtime dependencies.** A package's `dependencies` is empty
+  (`npm view @rathkit/rte-core dependencies` prints nothing). Packages name the
+  Rathkit packages and the host framework they work with as peer dependencies, never as
+  dependencies.
 - **No install scripts.** Installing a package runs none of our code.
 - **Nothing stored or sent by default.** The editor does not use `localStorage`,
   cookies or IndexedDB, and makes no network requests. A feature that needs the
@@ -23,8 +26,10 @@ These are release gates for every Rathkit package, not features you can install 
 - **Safety fixes ship to everyone.** Correctness, accessibility and security fixes
   are never limited to a paid tier.
 - **Verifiable releases.** Packages are published from CI with provenance, with
-  checksums and an SBOM attached to each release. The SBOM lists zero runtime
-  components.
+  checksums, a signature and an SBOM attached to each release. The SBOM lists zero
+  runtime components. This holds from `0.1.0-alpha.3`: `0.1.0-alpha.0` was published by
+  hand and has no provenance, and `0.1.0-alpha.1` and `0.1.0-alpha.2` were never published to
+  npm.
 
 Zero runtime dependencies shrinks supply-chain exposure. It does not remove it:
 build tooling, CI and accounts remain attack surface, which is why the release gates
@@ -57,7 +62,7 @@ You can check these from your browser's developer tools.
 
 ## Reporting a vulnerability
 
-Once the repositories are public, use GitHub's private vulnerability reporting
+Use GitHub's private vulnerability reporting
 (the **Report a vulnerability** button under the **Security** tab of the affected
 repository in the [rathkit organization](https://github.com/rathkit)). It reaches the
 maintainers privately and keeps the report, the discussion and any advisory in one
@@ -69,5 +74,4 @@ If a repository does not show that button, email
 [security policy](https://github.com/rathkit/.github/blob/main/SECURITY.md), which
 applies to every Rathkit repository, including Pack.
 
-Until then there is no software to report against. Please do not post suspected
-vulnerabilities in public issues.
+Please do not post suspected vulnerabilities in public issues.

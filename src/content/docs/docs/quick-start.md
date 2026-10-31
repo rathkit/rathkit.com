@@ -1,13 +1,12 @@
 ---
 title: Quick start
 description: Put an RTE editor on a page with the custom element, in a plain form or any framework.
-draft: true
 ---
 
-:::caution[Pre-release]
-Nothing is published yet, so these steps cannot be run. This page is built from the
-package documentation and will be checked against the released packages before it is
-published.
+:::caution[Alpha]
+These steps were run against the published `0.1.0-alpha.3` packages in Chromium, Firefox
+and WebKit: the elements register, the value round-trips, `rk-change` fires, and the form
+submits, resets and honors `required`. The packages are alpha, so APIs will change.
 :::
 
 The fastest way to use RTE is the custom element. It works in a plain page, in a native
@@ -108,4 +107,4 @@ the element's `value` property and `rk-change` event.
 
 ## Next
 
-Framework guides for React, Vue, Svelte and jQuery will follow.
+Framework guides for React, Vue, Svelte and jQuery will follow. To check what you installed, see [Verify a release](/docs/verify/).

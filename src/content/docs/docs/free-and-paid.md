@@ -6,10 +6,10 @@ description: What Rathkit RTE will always include for free, what may cost money,
 RTE is open source with paid options. This page says in advance where that line
 sits, so nothing you rely on can later move behind a paywall.
 
-:::caution[Pre-release]
-Nothing is published yet and there are no paid products. This page is a
-statement of intent that we will keep stable. There are no prices here because
-none have been set.
+:::caution[Alpha]
+The first alpha of the free packages is published and there are no paid products.
+This page is a statement of intent that we will keep stable. There are no prices here
+because none have been set.
 :::
 
 ## Free forever

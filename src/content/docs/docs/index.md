@@ -1,6 +1,6 @@
 ---
 title: Rathkit RTE documentation
-description: Documentation for RTE, the Rathkit rich text editor. In development.
+description: Documentation for RTE, the Rathkit rich text editor. The first alpha is on npm.
 sidebar:
   label: Overview
 ---
@@ -8,15 +8,16 @@ sidebar:
 RTE is the first Rathkit library: a rich text editor with no runtime
 dependencies and first-party wrappers for the major frameworks.
 
-:::caution[Pre-release]
-RTE is in development and nothing is published yet. These pages describe the
-design goals. Installation and API reference will be written from the released
-packages.
+:::caution[Alpha]
+The first alpha, `0.1.0-alpha.3`, is on npm under the `next` tag, so install with
+`@next`. It is a first look, not something to build on: APIs will change between
+releases. There is no API reference yet. Start with the [quick start](/docs/quick-start/),
+and see [Verify a release](/docs/verify/) to check what you install.
 :::
 
-## Packages in development
+## Packages
 
-None of these is published yet, and their APIs will change.
+All eleven are published as alphas, and their APIs will change.
 
 | Package | Purpose |
 | --- | --- |
