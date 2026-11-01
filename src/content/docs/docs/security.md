@@ -3,23 +3,27 @@ title: Security
 description: What Rathkit commits to for its software and this site, what we do not claim, and how to report a vulnerability.
 ---
 
-RTE's first alpha is on npm and Pack is not released. This page separates what is true
-of this site and of the published RTE packages from what we hold ourselves to for
+The first alphas of RTE and Pack are on npm. This page separates what is true
+of this site and of the published packages from what we hold ourselves to for
 everything we ship, and we only list claims you can check. [Verify a release](/docs/verify/)
 shows how.
 
 ## The libraries: commitments
 
-These are release gates for every Rathkit package. The RTE alpha is the first to be held to them.
+These are release gates for every Rathkit package. The RTE and Pack alphas are held to them.
 
 - **No runtime dependencies.** A package's `dependencies` is empty
-  (`npm view @rathkit/rte-core dependencies` prints nothing). Packages name the
-  Rathkit packages and the host framework they work with as peer dependencies, never as
-  dependencies.
+  (`npm view @rathkit/rte-core dependencies` and `npm view @rathkit/pack dependencies`
+  print nothing). RTE packages name the Rathkit packages and the host framework they work
+  with as peer dependencies, never as dependencies. Pack's launcher lists the program
+  packages for each platform as optional dependencies, so a package manager installs only
+  the one that fits.
 - **No install scripts.** Installing a package runs none of our code.
 - **Nothing stored or sent by default.** The editor does not use `localStorage`,
   cookies or IndexedDB, and makes no network requests. A feature that needs the
   network is a plugin you add, pointed at your own endpoints.
+- **Builds need no network.** A Pack build works with no network at all, and the repository
+  checks this on every change. Its development server listens on your machine.
 - **Content stays with you.** Editor content is never sent to Rathkit.
 - **Telemetry is a separate package.** If it exists, you install it on purpose, it is
   off until you configure it, and no other package imports it.
@@ -27,9 +31,10 @@ These are release gates for every Rathkit package. The RTE alpha is the first to
   are never limited to a paid tier.
 - **Verifiable releases.** Packages are published from CI with provenance, with
   checksums, a signature and an SBOM attached to each release. The SBOM lists zero
-  runtime components. This holds from `0.1.0-alpha.3`: `0.1.0-alpha.0` was published by
+  runtime components. For RTE this holds from `0.1.0-alpha.3`: `0.1.0-alpha.0` was published by
   hand and has no provenance, and `0.1.0-alpha.1` and `0.1.0-alpha.2` were never published to
-  npm.
+  npm. For Pack it holds from `0.1.0-alpha.1`: `0.1.0-alpha.0` was published by hand and has
+  no provenance.
 
 Zero runtime dependencies shrinks supply-chain exposure. It does not remove it:
 build tooling, CI and accounts remain attack surface, which is why the release gates

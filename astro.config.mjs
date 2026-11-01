@@ -26,7 +26,11 @@ export default defineConfig({
         { icon: 'heart', label: 'Sponsor', href: 'https://github.com/sponsors/rathpc' },
       ],
       routeMiddleware: './src/routeData.ts',
-      sidebar: [{ autogenerate: { directory: 'docs' } }],
+      sidebar: [
+        { label: 'Rathkit', items: ['docs', 'docs/principles', 'docs/free-and-paid', 'docs/security', 'docs/verify'] },
+        { label: 'RTE', items: ['docs/quick-start'] },
+        { label: 'Pack', items: ['docs/pack', 'docs/pack/quick-start'] },
+      ],
       head: [
         { tag: 'link', attrs: { rel: 'preload', href: '/fonts/archivo-latin-wdth-normal.woff2', as: 'font', type: 'font/woff2', crossorigin: '' } },
         { tag: 'link', attrs: { rel: 'preload', href: '/fonts/instrument-sans-latin-wght-normal.woff2', as: 'font', type: 'font/woff2', crossorigin: '' } },

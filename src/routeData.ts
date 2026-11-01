@@ -7,7 +7,7 @@ const cards = new Set(['principles', 'security', 'free-and-paid']);
 export const onRequest = defineRouteMiddleware((context) => {
   const { id, head } = context.locals.starlightRoute;
   const last = id.split('/').pop() ?? '';
-  const card = cards.has(last) ? last : 'docs';
+  const card = id.startsWith('docs/pack') ? 'pack' : cards.has(last) ? last : 'docs';
   head.push(
     { tag: 'meta', attrs: { property: 'og:image', content: `https://rathkit.com/og/${card}.png` } },
     { tag: 'meta', attrs: { property: 'og:image:width', content: '1200' } },

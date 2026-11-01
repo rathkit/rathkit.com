@@ -1,10 +1,11 @@
 ---
 title: Verify a release
-description: How to check that the RTE packages you install are the ones Rathkit released, with what they claim and nothing else.
+description: How to check that the RTE and Pack packages you install are the ones Rathkit released, with what they claim and nothing else.
 ---
 
 Every claim on the [Security](/docs/security/) page about the packages can be checked
-with commands you run yourself. Nothing here needs an account or a token.
+with commands you run yourself. Nothing here needs an account or a token. The steps below
+are for RTE; [Pack](#pack) has its own section at the end.
 
 ## No dependencies, no install scripts
 
@@ -71,3 +72,75 @@ the package and zero runtime components.
 
 Use `0.1.0-alpha.3` or later. `0.1.0-alpha.0` was published by hand and has no provenance.
 `0.1.0-alpha.1` and `0.1.0-alpha.2` exist only as GitHub pre-releases and were never on npm.
+
+## Pack
+
+Pack is eight packages: `@rathkit/pack` and one program package for each platform. The same
+checks apply, with these commands.
+
+### No dependencies, no install scripts
+
+```sh
+npm view @rathkit/pack@next dependencies
+npm view @rathkit/pack@next scripts
+npm view @rathkit/pack@next optionalDependencies
+```
+
+The first two print nothing. The third lists the seven platform packages, and your package
+manager installs only the one that fits your machine. The same two checks on a platform
+package, such as `@rathkit/pack-linux-x64-gnu@next`, also print nothing.
+
+### Provenance
+
+```sh
+npm audit signatures
+```
+
+Run it in a project that has installed `@rathkit/pack`. Every package published from CI has
+a provenance statement that says which repository, workflow and commit built it.
+
+### The files on the release
+
+Each [GitHub release](https://github.com/rathkit/pack/releases) carries one tarball per
+platform, a `SHA256SUMS` file, a software bill of materials and a Sigstore signature for each
+file, made by the release workflow.
+
+```sh
+tag=v0.1.0-alpha.1
+gh release download "$tag" -R rathkit/pack
+sha256sum --check --ignore-missing SHA256SUMS
+
+cosign verify-blob SHA256SUMS \
+  --bundle SHA256SUMS.sigstore.json \
+  --certificate-identity-regexp "^https://github.com/rathkit/pack/\.github/workflows/release\.yml@refs/tags/${tag}$" \
+  --certificate-oidc-issuer https://token.actions.githubusercontent.com
+```
+
+`sha256sum` should report every tarball as `OK`, and `cosign` should print `Verified OK`.
+
+### What npm serves is what was released
+
+The program inside the npm package is the binary on the release. On Linux with x64 and
+glibc:
+
+```sh
+tar -xzOf rathkit-pack-0.1.0-alpha.1-linux-x64-gnu.tar.gz --wildcards '*/rkp' | sha256sum
+sha256sum node_modules/@rathkit/pack-linux-x64-gnu/bin/rkp
+```
+
+The two values match, and the release's signed `SHA256SUMS` covers the tarball.
+
+### Software bill of materials
+
+```sh
+node -e "console.log(require('./rathkit-pack-0.1.0-alpha.1.sbom.cdx.json').components.length)"
+```
+
+This prints `0`: the SBOM lists no components.
+
+### Which versions
+
+Use `0.1.0-alpha.1` or later. `0.1.0-alpha.0` was published by hand and has no provenance.
+Pack is also on [crates.io](https://crates.io/crates/rathkit-pack); the
+[repository's guide](https://github.com/rathkit/pack/blob/main/docs/verifying.md) says what
+to check there.

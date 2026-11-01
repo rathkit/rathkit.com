@@ -1,6 +1,8 @@
 ---
-title: Quick start
+title: RTE quick start
 description: Put an RTE editor on a page with the custom element, in a plain form or any framework.
+sidebar:
+  label: Quick start
 ---
 
 :::caution[Alpha]

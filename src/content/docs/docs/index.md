@@ -1,21 +1,27 @@
 ---
-title: Rathkit RTE documentation
-description: Documentation for RTE, the Rathkit rich text editor. The first alpha is on npm.
+title: Rathkit documentation
+description: Documentation for RTE, the Rathkit rich text editor, and Pack, the Rathkit bundler. The first alphas are on npm.
 sidebar:
   label: Overview
 ---
 
-RTE is the first Rathkit library: a rich text editor with no runtime
-dependencies and first-party wrappers for the major frameworks.
+Rathkit builds libraries and tools with no runtime dependencies. There are two so far:
+
+- **RTE**, a rich text editor with first-party wrappers for the major frameworks. This
+  page lists its packages.
+- **Pack**, a JavaScript and TypeScript bundler written in Rust. Its documentation starts
+  at the [Pack overview](/docs/pack/).
+
+## RTE
 
 :::caution[Alpha]
-The first alpha, `0.1.0-alpha.3`, is on npm under the `next` tag, so install with
+The first RTE alpha, `0.1.0-alpha.3`, is on npm under the `next` tag, so install with
 `@next`. It is a first look, not something to build on: APIs will change between
-releases. There is no API reference yet. Start with the [quick start](/docs/quick-start/),
+releases. There is no API reference yet. Start with the [RTE quick start](/docs/quick-start/),
 and see [Verify a release](/docs/verify/) to check what you install.
 :::
 
-## Packages
+### Packages
 
 All eleven are published as alphas, and their APIs will change.
 
@@ -35,5 +41,5 @@ All eleven are published as alphas, and their APIs will change.
 
 Still to come: the reference server package, `rte-server`.
 
-Open-source packages live under the `@rathkit` scope on npm. Premium packages
+Open-source packages live under the `@rathkit` scope on npm. Premium RTE packages
 use a separate scope and are delivered from a private registry.
