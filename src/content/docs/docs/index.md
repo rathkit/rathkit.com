@@ -5,41 +5,20 @@ sidebar:
   label: Overview
 ---
 
-Rathkit builds libraries and tools with no runtime dependencies. There are two so far:
+Rathkit builds libraries and tools with no runtime dependencies. There are two so far, each
+with its own documentation:
 
-- **RTE**, a rich text editor with first-party wrappers for the major frameworks. This
-  page lists its packages.
-- **Pack**, a JavaScript and TypeScript bundler written in Rust. Its documentation starts
-  at the [Pack overview](/docs/pack/).
+- **[RTE](/docs/rte/)**, a rich text editor with first-party wrappers for the major
+  frameworks. Start with the [RTE overview](/docs/rte/) or the
+  [RTE quick start](/docs/quick-start/).
+- **[Pack](/docs/pack/)**, a JavaScript and TypeScript bundler written in Rust. Start with
+  the [Pack overview](/docs/pack/) or the [Pack quick start](/docs/pack/quick-start/).
 
-## RTE
+Both are alphas on npm, so their APIs and options will change. Pack is on crates.io too.
 
-:::caution[Alpha]
-The first RTE alpha, `0.1.0-alpha.3`, is on npm under the `next` tag, so install with
-`@next`. It is a first look, not something to build on: APIs will change between
-releases. There is no API reference yet. Start with the [RTE quick start](/docs/quick-start/),
-and see [Verify a release](/docs/verify/) to check what you install.
-:::
+## About Rathkit
 
-### Packages
-
-All eleven are published as alphas, and their APIs will change.
-
-| Package | Purpose |
-| --- | --- |
-| `@rathkit/rte-core` | Document model, HTML import and export, commands, plugin API, view layer, and the free standard plugins |
-| `@rathkit/rte-headless` | How toolbars, menus and dialogs behave for keyboard and assistive technology, with no markup or CSS |
-| `@rathkit/rte-element` | The editor as a custom element, `<rk-editor>`, with a matching `<rk-toolbar>` |
-| `@rathkit/rte-ui` | A styled toolbar and dialogs, themeable with tokens, presets, icons and messages |
-| `@rathkit/rte-themes` | Preset themes as plain CSS design tokens |
-| `@rathkit/rte-icons` | The interface icons, one SVG string each |
-| `@rathkit/rte-react` | React component and hooks |
-| `@rathkit/rte-vue` | Vue component and composables |
-| `@rathkit/rte-svelte` | Svelte stores and an action |
-| `@rathkit/rte-angular` | Angular directive, signals and a forms value accessor |
-| `@rathkit/rte-jquery` | `$(el).rkEditor(options)` over the custom element |
-
-Still to come: the reference server package, `rte-server`.
-
-Open-source packages live under the `@rathkit` scope on npm. Premium RTE packages
-use a separate scope and are delivered from a private registry.
+- [Design goals](/docs/principles/) says what every Rathkit tool holds to.
+- [Free and paid](/docs/free-and-paid/) says what is open source and what is not.
+- [Security](/docs/security/) says what we do about dependencies, releases and reports.
+- [Verify a release](/docs/verify/) shows how to check what you install, for both products.
