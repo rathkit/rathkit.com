@@ -1,6 +1,6 @@
 ---
 title: Pack documentation
-description: Documentation for Pack, the Rathkit JavaScript and TypeScript bundler written in Rust. The first alphas are on npm.
+description: Documentation for Pack, the Rathkit JavaScript and TypeScript bundler written in Rust. The first alphas are on npm and crates.io.
 sidebar:
   label: Overview
   order: 1
@@ -10,9 +10,9 @@ Pack is a JavaScript and TypeScript bundler written in Rust, with no dependencie
 crates. The command is `rkp`.
 
 :::caution[Alpha]
-The alpha, `0.1.0-alpha.1`, is on npm under the `next` tag, so install with `@next`. It is a
-first look, not something to build on: options, output and plugin support can change between
-releases. Start with the [quick start](/docs/pack/quick-start/), and see
+The alpha, `0.1.0-alpha.1`, is on npm under the `next` tag, so install with `@next`, and on
+crates.io. It is a first look, not something to build on: options, output and plugin support
+can change between releases. Start with the [quick start](/docs/pack/quick-start/), and see
 [Verify a release](/docs/verify/) to check what you install.
 :::
 
@@ -51,8 +51,8 @@ All eight are published as alphas.
 You install `@rathkit/pack`. It lists the seven platform packages as optional dependencies,
 and your package manager installs only the one that fits your machine. None of the eight has
 dependencies or an install script. The program is also on
-[crates.io](https://crates.io/crates/rathkit-pack) as `rathkit-pack`, and release tarballs
-are on [GitHub](https://github.com/rathkit/pack/releases).
+[crates.io](https://crates.io/crates/rathkit-pack) as `rathkit-pack`, with no dependencies
+there either, and release tarballs are on [GitHub](https://github.com/rathkit/pack/releases).
 
 ## Requirements
 

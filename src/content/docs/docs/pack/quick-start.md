@@ -21,6 +21,15 @@ The first releases are alpha and are published to the `next` tag only, so instal
 `@next`. The package gives you the `rkp` command and a JavaScript API. Your package manager
 installs only the platform package that fits your machine.
 
+If you have Rust and would rather build the program from source, install the crate instead.
+It has no dependencies, so the build fetches nothing else:
+
+```sh
+cargo install rathkit-pack --version 0.1.0-alpha.1 --locked
+```
+
+This gives you the `rkp` command but not the JavaScript API, which comes from the npm package.
+
 ## Bundle a file
 
 ```ts

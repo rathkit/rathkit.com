@@ -138,9 +138,26 @@ node -e "console.log(require('./rathkit-pack-0.1.0-alpha.1.sbom.cdx.json').compo
 
 This prints `0`: the SBOM lists no components.
 
+### crates.io
+
+The crate `rathkit-pack` has no dependencies either, and the source in it is the source of the
+tag:
+
+```sh
+curl -s https://crates.io/api/v1/crates/rathkit-pack/0.1.0-alpha.1/dependencies
+curl -sL https://crates.io/api/v1/crates/rathkit-pack/0.1.0-alpha.1/download -o rathkit-pack.crate
+tar -xzf rathkit-pack.crate
+git clone --branch v0.1.0-alpha.1 https://github.com/rathkit/pack
+diff -r pack/src rathkit-pack-0.1.0-alpha.1/src
+```
+
+The first command prints `{"dependencies":[]}` and `diff` prints nothing. For a version
+published by the release workflow, crates.io also records which workflow run and commit
+published it, in the `trustpub_data` field of
+`https://crates.io/api/v1/crates/rathkit-pack/0.1.0-alpha.1`.
+
 ### Which versions
 
-Use `0.1.0-alpha.1` or later. `0.1.0-alpha.0` was published by hand and has no provenance.
-Pack is also on [crates.io](https://crates.io/crates/rathkit-pack); the
-[repository's guide](https://github.com/rathkit/pack/blob/main/docs/verifying.md) says what
-to check there.
+Use `0.1.0-alpha.1` or later. `0.1.0-alpha.0` was published by hand and has no provenance,
+on npm and on crates.io. The [repository's guide](https://github.com/rathkit/pack/blob/main/docs/verifying.md)
+covers the same checks in more detail.
