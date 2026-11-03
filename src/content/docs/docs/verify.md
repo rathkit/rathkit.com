@@ -39,7 +39,7 @@ Each [GitHub release](https://github.com/rathkit/rte/releases) carries the tarba
 for `SHA256SUMS` made by the release workflow, with no key to manage.
 
 ```sh
-tag=v0.1.0-alpha.3
+tag=v{{rte}}
 gh release download "$tag" -R rathkit/rte
 sha256sum --check --ignore-missing SHA256SUMS
 
@@ -56,8 +56,8 @@ that tag, and from nothing else.
 ## What npm serves is what was released
 
 ```sh
-npm view @rathkit/rte-core@0.1.0-alpha.3 dist.shasum
-sha1sum rathkit-rte-core-0.1.0-alpha.3.tgz
+npm view @rathkit/rte-core@{{rte}} dist.shasum
+sha1sum rathkit-rte-core-{{rte}}.tgz
 ```
 
 The two values match. npm publishes the SHA-1 of the tarball; the release's `SHA256SUMS`,
@@ -65,7 +65,7 @@ which is signed, covers the same file.
 
 ## Software bill of materials
 
-`rathkit-rte-core-0.1.0-alpha.3.cdx.json` and its siblings are CycloneDX files. Each lists
+`rathkit-rte-core-{{rte}}.cdx.json` and its siblings are CycloneDX files. Each lists
 the package and zero runtime components.
 
 ## Which versions
@@ -106,7 +106,7 @@ platform, a `SHA256SUMS` file, a software bill of materials and a Sigstore signa
 file, made by the release workflow.
 
 ```sh
-tag=v0.1.0-alpha.1
+tag=v{{pack}}
 gh release download "$tag" -R rathkit/pack
 sha256sum --check --ignore-missing SHA256SUMS
 
@@ -124,7 +124,7 @@ The program inside the npm package is the binary on the release. On Linux with x
 glibc:
 
 ```sh
-tar -xzOf rathkit-pack-0.1.0-alpha.1-linux-x64-gnu.tar.gz --wildcards '*/rkp' | sha256sum
+tar -xzOf rathkit-pack-{{pack}}-linux-x64-gnu.tar.gz --wildcards '*/rkp' | sha256sum
 sha256sum node_modules/@rathkit/pack-linux-x64-gnu/bin/rkp
 ```
 
@@ -133,7 +133,7 @@ The two values match, and the release's signed `SHA256SUMS` covers the tarball.
 ### Software bill of materials
 
 ```sh
-node -e "console.log(require('./rathkit-pack-0.1.0-alpha.1.sbom.cdx.json').components.length)"
+node -e "console.log(require('./rathkit-pack-{{pack}}.sbom.cdx.json').components.length)"
 ```
 
 This prints `0`: the SBOM lists no components.
@@ -144,17 +144,17 @@ The crate `rathkit-pack` has no dependencies either, and the source in it is the
 tag:
 
 ```sh
-curl -s https://crates.io/api/v1/crates/rathkit-pack/0.1.0-alpha.1/dependencies
-curl -sL https://crates.io/api/v1/crates/rathkit-pack/0.1.0-alpha.1/download -o rathkit-pack.crate
+curl -s https://crates.io/api/v1/crates/rathkit-pack/{{pack}}/dependencies
+curl -sL https://crates.io/api/v1/crates/rathkit-pack/{{pack}}/download -o rathkit-pack.crate
 tar -xzf rathkit-pack.crate
-git clone --branch v0.1.0-alpha.1 https://github.com/rathkit/pack
-diff -r pack/src rathkit-pack-0.1.0-alpha.1/src
+git clone --branch v{{pack}} https://github.com/rathkit/pack
+diff -r pack/src rathkit-pack-{{pack}}/src
 ```
 
 The first command prints `{"dependencies":[]}` and `diff` prints nothing. For a version
 published by the release workflow, crates.io also records which workflow run and commit
 published it, in the `trustpub_data` field of
-`https://crates.io/api/v1/crates/rathkit-pack/0.1.0-alpha.1`.
+`https://crates.io/api/v1/crates/rathkit-pack/{{pack}}`.
 
 ### Which versions
 

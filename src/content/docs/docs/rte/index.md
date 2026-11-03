@@ -10,7 +10,7 @@ RTE is a rich text editor with no runtime dependencies and first-party wrappers 
 Vue, Svelte, Angular and jQuery, or use the custom element on its own.
 
 :::caution[Alpha]
-The first RTE alpha, `0.1.0-alpha.3`, is on npm under the `next` tag, so install with
+The current RTE alpha, `{{rte}}`, is on npm under the `next` tag, so install with
 `@next`. It is a first look, not something to build on: APIs will change between
 releases. There is no API reference yet. Start with the [RTE quick start](/docs/quick-start/),
 and see [Verify a release](/docs/verify/) to check what you install.

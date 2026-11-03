@@ -34,7 +34,9 @@ for (const [url, html] of pages) {
   const og = html.match(/<meta property="og:image" content="https:\/\/rathkit\.com(\/[^"]+)"/);
   if (!og) fail(`${url}: missing og:image`);
   else if (!existsSync(join(dist, og[1]))) fail(`${url}: og:image file not found: ${og[1]}`);
-  const h1 = (html.match(/<h1\b/g) || []).length;
+  if (/\{\{\s*[\w.]+\s*\}\}/.test(html.replace(/<script[\s\S]*?<\/script>/g, ''))) fail(`${url}: unfilled {{token}}`);
+  // Attribute values are dropped first: a code sample's copy button holds the sample's own markup.
+  const h1 = (html.replace(/="[^"]*"/g, '=""').match(/<h1\b/g) || []).length;
   if (h1 !== 1) fail(`${url}: ${h1} h1 elements`);
   for (const [tag] of html.matchAll(/<img\b[^>]*>/g)) {
     if (!/\salt[\s=>]/.test(tag)) fail(`${url}: image without alt: ${tag.slice(0, 80)}`);

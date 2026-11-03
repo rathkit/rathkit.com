@@ -10,7 +10,7 @@ Pack is a JavaScript and TypeScript bundler written in Rust, with no dependencie
 crates. The command is `rkp`.
 
 :::caution[Alpha]
-The alpha, `0.1.0-alpha.1`, is on npm under the `next` tag, so install with `@next`, and on
+The alpha, `{{pack}}`, is on npm under the `next` tag, so install with `@next`, and on
 crates.io. It is a first look, not something to build on: options, output and plugin support
 can change between releases. Start with the [quick start](/docs/pack/quick-start/), and see
 [Verify a release](/docs/verify/) to check what you install.

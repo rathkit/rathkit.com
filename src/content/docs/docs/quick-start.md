@@ -6,7 +6,7 @@ sidebar:
 ---
 
 :::caution[Alpha]
-These steps were run against the published `0.1.0-alpha.3` packages in Chromium, Firefox
+These steps were run against the published `{{rte.tested}}` packages in Chromium, Firefox
 and WebKit: the elements register, the value round-trips, `rk-change` fires, and the form
 submits, resets and honors `required`. The packages are alpha, so APIs will change.
 :::

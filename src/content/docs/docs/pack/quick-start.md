@@ -7,7 +7,7 @@ sidebar:
 ---
 
 :::caution[Alpha]
-These steps were run against the published `0.1.0-alpha.1` package on Linux, and the served
+These steps were run against the published `{{pack.tested}}` package on Linux, and the served
 page was checked in Chromium. The package is alpha, so options will change.
 :::
 
@@ -25,7 +25,7 @@ If you have Rust and would rather build the program from source, install the cra
 It has no dependencies, so the build fetches nothing else:
 
 ```sh
-cargo install rathkit-pack --version 0.1.0-alpha.1 --locked
+cargo install rathkit-pack --version {{pack}} --locked
 ```
 
 This gives you the `rkp` command but not the JavaScript API, which comes from the npm package.
