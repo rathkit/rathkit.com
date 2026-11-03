@@ -7,8 +7,8 @@ sidebar:
 ---
 
 :::caution[Alpha]
-These steps were run against the published `{{rte.tested}}` packages with React 19.3.1 in
-Chromium, Firefox and WebKit. The packages are alpha, so APIs will change.
+These steps were run against the published `{{rte.tested}}` packages with React 18.3.1 and
+19.3.1 in Chromium, Firefox and WebKit. The packages are alpha, so APIs will change.
 :::
 
 `@rathkit/rte-react` is a component and hooks over the headless layer. A component re-renders
@@ -66,8 +66,9 @@ export function Field() {
 ## Checked
 
 The README example is built and run as written in Chromium, Firefox and WebKit: typing reaches
-`onChange`, and the Bold button runs the command and shows it on. Not tested: React 18,
-server-side rendering, real devices and screen readers.
+`onChange`, and the Bold button runs the command and shows it on. The whole wrapper check ran
+against React 18.3.1 (the oldest major version the package allows) and 19.3.1. Not tested: other React
+versions, server-side rendering, real devices and screen readers.
 
 If you would rather not use the wrapper, the [custom element](/docs/quick-start/) works in React
 too. To check what you installed, see [Verify a release](/docs/verify/).

@@ -7,8 +7,8 @@ sidebar:
 ---
 
 :::caution[Alpha]
-These steps were run against the published `{{rte.tested}}` packages with jQuery 4.0.0 in
-Chromium, Firefox and WebKit. The packages are alpha, so APIs will change.
+These steps were run against the published `{{rte.tested}}` packages with jQuery 3.7.1 and
+4.0.0 in Chromium, Firefox and WebKit. The packages are alpha, so APIs will change.
 :::
 
 `@rathkit/rte-jquery` adds `$(el).rkEditor(options)` over the custom element, and reports edits
@@ -53,10 +53,10 @@ $("#editor").rkEditor("html");               // read it; rkEditor("html", "<p>x<
 
 ## Checked
 
-The README example is bundled with jQuery 4.0.0 and run as written in Chromium, Firefox and
+The README example is bundled with each and run as written in Chromium, Firefox and
 WebKit: the editor is built, and typing fires `rk:change` with the HTML. The other calls on this
 page (reading and replacing the HTML, getting the editor, and `destroy`) were also run against
-the published packages in the same three browsers. The package is written for jQuery 3 and 4, but
-only jQuery 4 is tested. Not tested: real devices and screen readers.
+the published packages in the same three browsers. The whole wrapper check ran against jQuery 3.7.1 and
+4.0.0. Not tested: other jQuery versions, real devices and screen readers.
 
 To check what you installed, see [Verify a release](/docs/verify/).

@@ -7,8 +7,8 @@ sidebar:
 ---
 
 :::caution[Alpha]
-These steps were run against the published `{{rte.tested}}` packages with Vue 3.5.44 in
-Chromium, Firefox and WebKit. The packages are alpha, so APIs will change.
+These steps were run against the published `{{rte.tested}}` packages with Vue 3.4.38 and
+3.5.44 in Chromium, Firefox and WebKit. The packages are alpha, so APIs will change.
 :::
 
 `@rathkit/rte-vue` is a component and composables over the headless layer. A ref changes only
@@ -58,7 +58,8 @@ const bold = useCommand(editor, "format.bold");
 
 The README example is compiled with Vue's own single-file component compiler and run as written
 in Chromium, Firefox and WebKit: typing reaches `change`, and the Bold button runs the command
-and shows it on. Not tested: other Vue versions, server-side rendering, real devices and screen
+and shows it on. The whole wrapper check ran against Vue 3.4.38 (in the oldest minor version the package allows)
+and 3.5.44. Not tested: other Vue versions, server-side rendering, real devices and screen
 readers.
 
 If you would rather not use the wrapper, the [custom element](/docs/quick-start/) works in Vue
