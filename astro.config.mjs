@@ -28,7 +28,7 @@ export default defineConfig({
       routeMiddleware: './src/routeData.ts',
       sidebar: [
         { label: 'Rathkit', items: ['docs', 'docs/principles', 'docs/free-and-paid', 'docs/security', 'docs/verify'] },
-        { label: 'RTE', items: ['docs/rte', 'docs/quick-start'] },
+        { label: 'RTE', items: ['docs/rte', 'docs/rte/features', 'docs/quick-start'] },
         { label: 'Pack', items: ['docs/pack', 'docs/pack/quick-start'] },
       ],
       head: [
