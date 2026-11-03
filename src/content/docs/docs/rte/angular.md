@@ -7,8 +7,8 @@ sidebar:
 ---
 
 :::caution[Alpha]
-These steps were run against the published `{{rte.tested}}` packages with Angular 22.2.3 in
-Chromium, Firefox and WebKit. The packages are alpha, so APIs will change.
+These steps were run against the published `{{rte.tested}}` packages with Angular 20.3.35,
+21.2.26 and 22.2.3 in Chromium, Firefox and WebKit. The packages are alpha, so APIs will change.
 :::
 
 Angular has a wrapper, `@rathkit/rte-angular`: a standalone directive, signals over the
@@ -58,11 +58,13 @@ export class App {
 - It is 1.4 KB gzipped without the forms entry and 1.5 KB with it (unminified, measured by the
   repository's size check).
 
-Checked against Angular 22 in Chromium, Firefox and WebKit: just-in-time, ahead-of-time
+Checked against Angular 22.2.3 in Chromium, Firefox and WebKit: just-in-time, ahead-of-time
 (Angular's compiler with strict templates, plus its linker) and, once, a production build with
 the Angular CLI. The README example is built and run as written, and reactive and `ngModel`
-forms are tested. Not tested: other Angular versions, server-side rendering, real devices and
-screen readers.
+forms are tested. The whole wrapper check also ran against Angular 21.2.26 and Angular 20.3.35,
+the oldest major version the package allows. On Angular 20 it ran twice, with zone.js and
+without it, because Angular 20 needs one or the other. Not tested: other Angular versions,
+server-side rendering, real devices and screen readers.
 
 If you would rather not use the wrapper, the custom element works in Angular too. Add
 `CUSTOM_ELEMENTS_SCHEMA` to the component, import `@rathkit/rte-element/define` once, and bind
