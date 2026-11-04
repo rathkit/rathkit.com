@@ -30,8 +30,9 @@ can change between releases. Start with the [quick start](/docs/pack/quick-start
   Node.
 - Has a JavaScript API, `build` and `serve`, that takes the command's flags as options.
 
-The [repository README](https://github.com/rathkit/pack#readme) lists every option, what is
-covered by tests and the behavior worth knowing about.
+[Options](/docs/pack/options/) lists every option of `rkp`, and [Plugins](/docs/pack/plugins/)
+shows each kind of plugin working. The [repository README](https://github.com/rathkit/pack#readme)
+has what is covered by tests and the behavior worth knowing about.
 
 ## Packages
 
