@@ -2,7 +2,7 @@
 
 This repository is the Rathkit website and documentation, not the libraries. Each library has its own repository and its own contributing page. This page is the whole process, in the order you will meet it.
 
-**Status: pre-alpha.** Fixes to typos, broken links and unclear or wrong wording are welcome now. For anything larger, open an issue first and wait for the `accepted` label. Questions are welcome on Discord (see the end of this page).
+**Status: alpha.** The first alphas of the libraries are published and this site is live. Fixes to typos, broken links and unclear or wrong wording are welcome now. For anything larger, open an issue first and wait for the `accepted` label. Questions are welcome on Discord (see the end of this page).
 
 ## The short version
 
