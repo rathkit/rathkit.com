@@ -37,7 +37,7 @@ export default defineConfig({
             { label: 'Framework wrappers', items: ['docs/rte/react', 'docs/rte/vue', 'docs/rte/svelte', 'docs/rte/angular', 'docs/rte/jquery'] },
           ],
         },
-        { label: 'Pack', items: ['docs/pack', 'docs/pack/quick-start'] },
+        { label: 'Pack', items: ['docs/pack', 'docs/pack/quick-start', 'docs/pack/options', 'docs/pack/plugins'] },
       ],
       head: [
         { tag: 'link', attrs: { rel: 'preload', href: '/fonts/archivo-latin-wdth-normal.woff2', as: 'font', type: 'font/woff2', crossorigin: '' } },
