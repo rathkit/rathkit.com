@@ -68,6 +68,6 @@ server-side rendering, real devices and screen readers.
 
 If you would rather not use the wrapper, the custom element works in Angular too. Add
 `CUSTOM_ELEMENTS_SCHEMA` to the component, import `@rathkit/rte-element/define` once, and bind
-the element's `value` property and `rk-change` event.
+the element's `value` property and `rte-change` event.
 
 To check what you installed, see [Verify a release](/docs/verify/).

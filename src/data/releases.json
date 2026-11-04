@@ -1,4 +1,4 @@
 {
-  "rte": { "version": "0.1.0-alpha.4", "tested": "0.1.0-alpha.4" },
+  "rte": { "version": "0.1.0-alpha.5", "tested": "0.1.0-alpha.5" },
   "pack": { "version": "0.1.0-alpha.1", "tested": "0.1.0-alpha.1" }
 }

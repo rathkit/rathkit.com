@@ -8,7 +8,7 @@ sidebar:
 
 This is what the editor does today, in the alpha. Everything here is free and open source.
 "Standard" means the editor made by `createEditor()` from `@rathkit/rte-core/standard`, or the
-`<rk-editor>` element, which has the same plugins. Each plugin is also an entry point of
+`<rte-editor>` element, which has the same plugins. Each plugin is also an entry point of
 `@rathkit/rte-core`, so a page that builds the editor from parts takes only what it lists.
 
 :::note[Alpha]

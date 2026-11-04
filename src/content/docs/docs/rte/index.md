@@ -24,7 +24,7 @@ All eleven are published as alphas, and their APIs will change.
 | --- | --- |
 | `@rathkit/rte-core` | Document model, HTML import and export, commands, plugin API, view layer, and the free standard plugins |
 | `@rathkit/rte-headless` | How toolbars, menus and dialogs behave for keyboard and assistive technology, with no markup or CSS |
-| `@rathkit/rte-element` | The editor as a custom element, `<rk-editor>`, with a matching `<rk-toolbar>` |
+| `@rathkit/rte-element` | The editor as a custom element, `<rte-editor>`, with a matching `<rte-toolbar>` |
 | `@rathkit/rte-ui` | A styled toolbar and dialogs, themeable with tokens, presets, icons and messages |
 | `@rathkit/rte-themes` | Preset themes as plain CSS design tokens |
 | `@rathkit/rte-icons` | The interface icons, one SVG string each |
@@ -32,7 +32,7 @@ All eleven are published as alphas, and their APIs will change.
 | `@rathkit/rte-vue` | Vue component and composables |
 | `@rathkit/rte-svelte` | Svelte stores and an action |
 | `@rathkit/rte-angular` | Angular directive, signals and a forms value accessor |
-| `@rathkit/rte-jquery` | `$(el).rkEditor(options)` over the custom element |
+| `@rathkit/rte-jquery` | `$(el).rteEditor(options)` over the custom element |
 
 Still to come: the reference server package, `rte-server`.
 

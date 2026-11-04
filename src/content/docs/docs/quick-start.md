@@ -7,7 +7,7 @@ sidebar:
 
 :::caution[Alpha]
 These steps were run against the published `{{rte.tested}}` packages in Chromium, Firefox
-and WebKit: the elements register, the value round-trips, `rk-change` fires, and the form
+and WebKit: the elements register, the value round-trips, `rte-change` fires, and the form
 submits, resets and honors `required`. The packages are alpha, so APIs will change.
 :::
 
@@ -24,8 +24,8 @@ npm install @rathkit/rte-core@next @rathkit/rte-headless@next @rathkit/rte-eleme
 
 ```html
 <form>
-  <rk-toolbar for="body"></rk-toolbar>
-  <rk-editor id="body" name="body" label="Body" value="<p>Hello</p>" required></rk-editor>
+  <rte-toolbar for="body"></rte-toolbar>
+  <rte-editor id="body" name="body" label="Body" value="<p>Hello</p>" required></rte-editor>
 </form>
 <script type="module">
   import '@rathkit/rte-element/define';
@@ -35,7 +35,7 @@ npm install @rathkit/rte-core@next @rathkit/rte-headless@next @rathkit/rte-eleme
 The first releases are alpha and are published to the `next` tag only, so install with `@next`.
 
 Importing the package defines nothing by itself. Importing `@rathkit/rte-element/define`
-registers `<rk-editor>` and `<rk-toolbar>`. The page needs a bundler or an import map that
+registers `<rte-editor>` and `<rte-toolbar>`. The page needs a bundler or an import map that
 resolves the three packages.
 
 ## What you get
@@ -43,9 +43,9 @@ resolves the three packages.
 - The editor takes part in a native `<form>`: it submits its value as HTML, resets to its
   starting content, and honors `required` and `disabled`.
 - Give it a `label`. Without a label, `aria-label` or `aria-labelledby`, a warning is logged.
-- Read and set the document with the `value` property. Listen for `rk-change`, whose
+- Read and set the document with the `value` property. Listen for `rte-change`, whose
   detail is `{ html }`.
-- `<rk-toolbar>` is a plain, unstyled toolbar with keyboard and screen reader behavior built
+- `<rte-toolbar>` is a plain, unstyled toolbar with keyboard and screen reader behavior built
   in. Style it from your page, or use `@rathkit/rte-ui` for a styled interface.
 
 ## Frameworks
@@ -57,7 +57,7 @@ it checks:
 - [Vue](/docs/rte/vue/): a component and composables.
 - [Svelte](/docs/rte/svelte/): an action and stores.
 - [Angular](/docs/rte/angular/): a standalone directive, signals and a forms value accessor.
-- [jQuery](/docs/rte/jquery/): `$(el).rkEditor(options)`.
+- [jQuery](/docs/rte/jquery/): `$(el).rteEditor(options)`.
 
 ## Next
 

@@ -1,6 +1,6 @@
 ---
 title: RTE for jQuery
-description: Use the Rathkit rich text editor from jQuery with $(el).rkEditor(options) over the custom element.
+description: Use the Rathkit rich text editor from jQuery with $(el).rteEditor(options) over the custom element.
 sidebar:
   label: jQuery
   order: 6
@@ -11,8 +11,8 @@ These steps were run against the published `{{rte.tested}}` packages with jQuery
 4.0.0 in Chromium, Firefox and WebKit. The packages are alpha, so APIs will change.
 :::
 
-`@rathkit/rte-jquery` adds `$(el).rkEditor(options)` over the custom element, and reports edits
-as `rk:change` events. It is for pages that already use jQuery and a bundler or an import map.
+`@rathkit/rte-jquery` adds `$(el).rteEditor(options)` over the custom element, and reports edits
+as `rte:change` events. It is for pages that already use jQuery and a bundler or an import map.
 
 ## Install
 
@@ -33,28 +33,28 @@ import { install } from "@rathkit/rte-jquery";
 install($);
 
 // in a page with <div id="editor"></div>
-$("#editor").rkEditor({ label: "Body", html: "<p>Hello</p>" });
-$("#editor").on("rk:change", (event, html) => console.log(html));
-$("#editor").rkEditor("html");               // read it; rkEditor("html", "<p>x</p>") replaces it
+$("#editor").rteEditor({ label: "Body", html: "<p>Hello</p>" });
+$("#editor").on("rte:change", (event, html) => console.log(html));
+$("#editor").rteEditor("html");               // read it; rteEditor("html", "<p>x</p>") replaces it
 ```
 
 ## What you get
 
-- `install($)` adds the `rkEditor` method to the jQuery you pass it. Importing
+- `install($)` adds the `rteEditor` method to the jQuery you pass it. Importing
   `@rathkit/rte-element/define` registers the elements the method builds on.
-- `$(el).rkEditor({ label, html, readOnly, ... })` turns the element into an editor, once.
+- `$(el).rteEditor({ label, html, readOnly, ... })` turns the element into an editor, once.
   `label` is required: it names the editing surface for screen readers.
-- `rkEditor("html")` reads the HTML of the first element, and `rkEditor("html", "<p>x</p>")`
+- `rteEditor("html")` reads the HTML of the first element, and `rteEditor("html", "<p>x</p>")`
   replaces it.
-- `rkEditor("editor")` gives the editor of the first element, as a promise, because the editor is
+- `rteEditor("editor")` gives the editor of the first element, as a promise, because the editor is
   built when the element connects. Run commands on it with `editor.commands.run(name)`.
-- `rkEditor("destroy")` removes the editor.
-- Edits arrive as `rk:change` events with the HTML as the second argument to the handler.
+- `rteEditor("destroy")` removes the editor.
+- Edits arrive as `rte:change` events with the HTML as the second argument to the handler.
 
 ## Checked
 
 The README example is bundled with each and run as written in Chromium, Firefox and
-WebKit: the editor is built, and typing fires `rk:change` with the HTML. The other calls on this
+WebKit: the editor is built, and typing fires `rte:change` with the HTML. The other calls on this
 page (reading and replacing the HTML, getting the editor, and `destroy`) were also run against
 the published packages in the same three browsers. The whole wrapper check ran against jQuery 3.7.1 and
 4.0.0. Not tested: other jQuery versions, real devices and screen readers.
