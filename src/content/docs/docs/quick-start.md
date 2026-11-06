@@ -11,7 +11,7 @@ and WebKit: the elements register, the value round-trips, `rte-change` fires, an
 submits, resets and honors `required`. The packages are alpha, so APIs will change.
 :::
 
-The fastest way to use RTE is the custom element. It works in a plain page, in a native
+The quickest setup for RTE is the custom element. It works in a plain page, in a native
 form, and in any framework.
 
 ## Install
