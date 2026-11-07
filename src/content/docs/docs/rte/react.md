@@ -6,9 +6,10 @@ sidebar:
   order: 3
 ---
 
-:::caution[Alpha]
-These steps were run against the published `{{rte.tested}}` packages with React 18.3.1 and
-19.3.1 in Chromium, Firefox and WebKit. The packages are alpha, so APIs will change.
+:::caution[Beta]
+These steps were run against the published `{{rte.tested}}` packages with React 19.3.1 in
+Chromium, Firefox and WebKit. React 18.3.1, the oldest version the wrapper allows, was last run on
+`0.1.0-alpha.4`. The packages are beta, so APIs can still change.
 :::
 
 `@rathkit/rte-react` is a component and hooks over the headless layer. A component re-renders
@@ -21,7 +22,7 @@ accessibility logic lives in the wrapper.
 npm install @rathkit/rte-react@next @rathkit/rte-core@next @rathkit/rte-headless@next
 ```
 
-The packages are alpha and are published to the `next` tag only, so install with `@next`.
+The packages are beta and are published to the `next` tag only, so install with `@next`.
 `react` (version 18 or later) comes from your own project. The wrapper has no dependencies of
 its own.
 
@@ -67,7 +68,8 @@ export function Field() {
 
 The README example is built and run as written in Chromium, Firefox and WebKit: typing reaches
 `onChange`, and the Bold button runs the command and shows it on. The whole wrapper check ran
-against React 18.3.1 (the oldest major version the package allows) and 19.3.1. Not tested: other React
+against React 19.3.1 on the beta, and against React 18.3.1 (the oldest major version the package
+allows) and 19.3.1 on `0.1.0-alpha.4`. Not tested: other React
 versions, server-side rendering, real devices and screen readers.
 
 If you would rather not use the wrapper, the [custom element](/docs/quick-start/) works in React

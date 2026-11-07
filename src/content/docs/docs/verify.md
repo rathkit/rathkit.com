@@ -29,7 +29,7 @@ npm audit signatures
 Run it in a project that has installed the packages. It checks the registry signature of
 every package and, for packages published from CI, the provenance statement that says which
 repository, workflow and commit built them. The npm page of each package from
-`0.1.0-alpha.3` also shows a provenance badge. `0.1.0-alpha.0` has none: it was published by
+`0.1.0-alpha.3` through the beta also shows a provenance badge. `0.1.0-alpha.0` has none: it was published by
 hand.
 
 ## The files on the release
@@ -70,7 +70,8 @@ the package and zero runtime components.
 
 ## Which versions
 
-Use `0.1.0-alpha.3` or later. `0.1.0-alpha.0` was published by hand and has no provenance.
+Use `0.1.0-alpha.3` or later, which includes the beta, `0.2.0-beta.0`. `0.1.0-alpha.0` was published by hand
+and has no provenance.
 `0.1.0-alpha.1` and `0.1.0-alpha.2` exist only as GitHub pre-releases and were never on npm.
 
 ## Pack

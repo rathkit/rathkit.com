@@ -6,9 +6,10 @@ sidebar:
   order: 7
 ---
 
-:::caution[Alpha]
-These steps were run against the published `{{rte.tested}}` packages with Angular 20.3.35,
-21.2.26 and 22.2.3 in Chromium, Firefox and WebKit. The packages are alpha, so APIs will change.
+:::caution[Beta]
+These steps were run against the published `{{rte.tested}}` packages with Angular 22.2.3 in
+Chromium, Firefox and WebKit. Angular 21.2.26 and 20.3.35, the oldest major version the wrapper
+allows, were last run on `0.1.0-alpha.4`. The packages are beta, so APIs can still change.
 :::
 
 Angular has a wrapper, `@rathkit/rte-angular`: a standalone directive, signals over the
@@ -61,8 +62,8 @@ export class App {
 Checked against Angular 22.2.3 in Chromium, Firefox and WebKit: just-in-time, ahead-of-time
 (Angular's compiler with strict templates, plus its linker) and, once, a production build with
 the Angular CLI. The README example is built and run as written, and reactive and `ngModel`
-forms are tested. The whole wrapper check also ran against Angular 21.2.26 and Angular 20.3.35,
-the oldest major version the package allows. On Angular 20 it ran twice, with zone.js and
+forms are tested. The whole wrapper check ran against Angular 22.2.3 on the beta, and also against Angular 21.2.26 and
+Angular 20.3.35, the oldest major version the package allows, on `0.1.0-alpha.4`. On Angular 20 it ran twice, with zone.js and
 without it, because Angular 20 needs one or the other. Not tested: other Angular versions,
 server-side rendering, real devices and screen readers.
 

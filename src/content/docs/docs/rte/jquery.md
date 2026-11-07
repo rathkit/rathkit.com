@@ -6,9 +6,10 @@ sidebar:
   order: 6
 ---
 
-:::caution[Alpha]
-These steps were run against the published `{{rte.tested}}` packages with jQuery 3.7.1 and
-4.0.0 in Chromium, Firefox and WebKit. The packages are alpha, so APIs will change.
+:::caution[Beta]
+These steps were run against the published `{{rte.tested}}` packages with jQuery 4.0.0 in
+Chromium, Firefox and WebKit. jQuery 3.7.1, the oldest version the wrapper allows, was last run on
+`0.1.0-alpha.4`. The packages are beta, so APIs can still change.
 :::
 
 `@rathkit/rte-jquery` adds `$(el).rteEditor(options)` over the custom element, and reports edits
@@ -20,7 +21,7 @@ as `rte:change` events. It is for pages that already use jQuery and a bundler or
 npm install @rathkit/rte-jquery@next @rathkit/rte-core@next @rathkit/rte-element@next
 ```
 
-The packages are alpha and are published to the `next` tag only, so install with `@next`.
+The packages are beta and are published to the `next` tag only, so install with `@next`.
 `jquery` comes from your own project. The wrapper has no dependencies of its own.
 
 ## Use it
@@ -56,7 +57,7 @@ $("#editor").rteEditor("html");               // read it; rteEditor("html", "<p>
 The README example is bundled with each and run as written in Chromium, Firefox and
 WebKit: the editor is built, and typing fires `rte:change` with the HTML. The other calls on this
 page (reading and replacing the HTML, getting the editor, and `destroy`) were also run against
-the published packages in the same three browsers. The whole wrapper check ran against jQuery 3.7.1 and
-4.0.0. Not tested: other jQuery versions, real devices and screen readers.
+the published packages in the same three browsers. The whole wrapper check ran against jQuery 4.0.0 on the beta, and against jQuery 3.7.1 and
+4.0.0 on `0.1.0-alpha.4`. Not tested: other jQuery versions, real devices and screen readers.
 
 To check what you installed, see [Verify a release](/docs/verify/).

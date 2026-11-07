@@ -3,14 +3,14 @@ title: Security
 description: What Rathkit commits to for its software and this site, what we do not claim, and how to report a vulnerability.
 ---
 
-The first alphas of RTE and Pack are on npm. This page separates what is true
+The RTE beta and the Pack alpha are on npm. This page separates what is true
 of this site and of the published packages from what we hold ourselves to for
 everything we ship, and we only list claims you can check. [Verify a release](/docs/verify/)
 shows how.
 
 ## The libraries: commitments
 
-These are release gates for every Rathkit package. The RTE and Pack alphas are held to them.
+These are release gates for every Rathkit package. The RTE beta and the Pack alpha are held to them.
 
 - **No runtime dependencies.** A package's `dependencies` is empty
   (`npm view @rathkit/rte-core dependencies` and `npm view @rathkit/pack dependencies`
@@ -31,7 +31,7 @@ These are release gates for every Rathkit package. The RTE and Pack alphas are h
   are never limited to a paid tier.
 - **Verifiable releases.** Packages are published from CI with provenance, with
   checksums, a signature and an SBOM attached to each release. The SBOM lists zero
-  runtime components. For RTE this holds from `0.1.0-alpha.3`: `0.1.0-alpha.0` was published by
+  runtime components. For RTE this holds from `0.1.0-alpha.3` through the beta, `0.2.0-beta.0`: `0.1.0-alpha.0` was published by
   hand and has no provenance, and `0.1.0-alpha.1` and `0.1.0-alpha.2` were never published to
   npm. For Pack it holds from `0.1.0-alpha.1`: `0.1.0-alpha.0` was published by hand and has
   no provenance.

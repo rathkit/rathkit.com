@@ -6,13 +6,13 @@ sidebar:
   order: 2
 ---
 
-This is what the editor does today, in the alpha. Everything here is free and open source.
+This is what the editor does today, in the beta. Everything here is free and open source.
 "Standard" means the editor made by `createEditor()` from `@rathkit/rte-core/standard`, or the
 `<rte-editor>` element, which has the same plugins. Each plugin is also an entry point of
 `@rathkit/rte-core`, so a page that builds the editor from parts takes only what it lists.
 
-:::note[Alpha]
-APIs will change between alphas. Footnotes and Markdown arrived in `0.1.0-alpha.4`.
+:::note[Beta]
+APIs can still change between releases. Footnotes and Markdown arrived in `0.1.0-alpha.4`.
 :::
 
 ## Text and blocks

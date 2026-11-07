@@ -5,10 +5,10 @@ sidebar:
   label: Quick start
 ---
 
-:::caution[Alpha]
+:::caution[Beta]
 These steps were run against the published `{{rte.tested}}` packages in Chromium, Firefox
 and WebKit: the elements register, the value round-trips, `rte-change` fires, and the form
-submits, resets and honors `required`. The packages are alpha, so APIs will change.
+submits, resets and honors `required`. The packages are beta, so APIs can still change.
 :::
 
 The quickest setup for RTE is the custom element. It works in a plain page, in a native
@@ -32,7 +32,7 @@ npm install @rathkit/rte-core@next @rathkit/rte-headless@next @rathkit/rte-eleme
 </script>
 ```
 
-The first releases are alpha and are published to the `next` tag only, so install with `@next`.
+RTE is in beta and is published to the `next` tag only, so install with `@next`.
 
 Importing the package defines nothing by itself. Importing `@rathkit/rte-element/define`
 registers `<rte-editor>` and `<rte-toolbar>`. The page needs a bundler or an import map that

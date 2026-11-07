@@ -6,9 +6,9 @@ sidebar:
   order: 5
 ---
 
-:::caution[Alpha]
+:::caution[Beta]
 These steps were run against the published `{{rte.tested}}` packages with Svelte 5.57.2 in
-Chromium, Firefox and WebKit. The packages are alpha, so APIs will change.
+Chromium, Firefox and WebKit. The packages are beta, so APIs can still change.
 :::
 
 `@rathkit/rte-svelte` is an action and stores over the headless layer. Svelte's store contract
@@ -21,7 +21,7 @@ only when the value it holds changes.
 npm install @rathkit/rte-svelte@next @rathkit/rte-core@next @rathkit/rte-headless@next
 ```
 
-The packages are alpha and are published to the `next` tag only, so install with `@next`. The
+The packages are beta and are published to the `next` tag only, so install with `@next`. The
 wrapper has no dependencies of its own.
 
 ## Use it

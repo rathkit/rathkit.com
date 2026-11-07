@@ -1,6 +1,6 @@
 ---
 title: RTE documentation
-description: Documentation for RTE, the Rathkit rich text editor with first-party wrappers for the major frameworks. The first alphas are on npm.
+description: Documentation for RTE, the Rathkit rich text editor with first-party wrappers for the major frameworks. The beta is on npm.
 sidebar:
   label: Overview
   order: 1
@@ -9,16 +9,20 @@ sidebar:
 RTE is a rich text editor with no runtime dependencies and first-party wrappers for React,
 Vue, Svelte, Angular and jQuery, or use the custom element on its own.
 
-:::caution[Alpha]
-The current RTE alpha, `{{rte}}`, is on npm under the `next` tag, so install with
-`@next`. It is a first look, not something to build on: APIs will change between
-releases. There is no API reference yet. Start with the [RTE quick start](/docs/quick-start/),
+:::caution[Beta]
+The current RTE beta, `{{rte}}`, is on npm under the `next` tag, so install with
+`@next`. It is not for production yet: APIs, options, output and plugin support can still
+change between releases. There is no API reference yet. Start with the [RTE quick start](/docs/quick-start/),
 and see [Verify a release](/docs/verify/) to check what you install.
+
+The beta adds a benchmark suite with a stated method, kept in its own repository,
+[rte-bench](https://github.com/rathkit/rte-bench), and size and speed limits that are checked
+on every change.
 :::
 
 ## Packages
 
-All eleven are published as alphas, and their APIs will change.
+All eleven are published as betas, and their APIs can still change.
 
 | Package | Purpose |
 | --- | --- |

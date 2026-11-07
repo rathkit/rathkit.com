@@ -6,9 +6,10 @@ sidebar:
   order: 4
 ---
 
-:::caution[Alpha]
-These steps were run against the published `{{rte.tested}}` packages with Vue 3.4.38 and
-3.5.44 in Chromium, Firefox and WebKit. The packages are alpha, so APIs will change.
+:::caution[Beta]
+These steps were run against the published `{{rte.tested}}` packages with Vue 3.5.44 in
+Chromium, Firefox and WebKit. Vue 3.4.38, the oldest minor version the wrapper allows, was last run
+on `0.1.0-alpha.4`. The packages are beta, so APIs can still change.
 :::
 
 `@rathkit/rte-vue` is a component and composables over the headless layer. A ref changes only
@@ -20,7 +21,7 @@ when the value it holds does, so typing does not update a Bold button.
 npm install @rathkit/rte-vue@next @rathkit/rte-core@next @rathkit/rte-headless@next
 ```
 
-The packages are alpha and are published to the `next` tag only, so install with `@next`.
+The packages are beta and are published to the `next` tag only, so install with `@next`.
 `vue` (version 3.4 or later) comes from your own project. The wrapper has no dependencies of
 its own.
 
@@ -58,8 +59,8 @@ const bold = useCommand(editor, "format.bold");
 
 The README example is compiled with Vue's own single-file component compiler and run as written
 in Chromium, Firefox and WebKit: typing reaches `change`, and the Bold button runs the command
-and shows it on. The whole wrapper check ran against Vue 3.4.38 (in the oldest minor version the package allows)
-and 3.5.44. Not tested: other Vue versions, server-side rendering, real devices and screen
+and shows it on. The whole wrapper check ran against Vue 3.5.44 on the beta, and against Vue 3.4.38 (the oldest
+minor version the package allows) and 3.5.44 on `0.1.0-alpha.4`. Not tested: other Vue versions, server-side rendering, real devices and screen
 readers.
 
 If you would rather not use the wrapper, the [custom element](/docs/quick-start/) works in Vue
