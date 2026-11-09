@@ -65,5 +65,5 @@ warn about it. [Verify a release](/docs/verify/) shows what to rely on instead.
 
 Pack follows semantic versioning with the usual 0.x reading: any release may change options,
 output and plugin support, and the changelog says what changed. The development server, hot
-module replacement and module federation have been tried in Chromium only. See the
+module replacement and module federation are tested in Chromium, Firefox and WebKit on Linux. See the
 [changelog](https://github.com/rathkit/pack/blob/main/CHANGELOG.md).

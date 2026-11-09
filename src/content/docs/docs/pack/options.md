@@ -151,10 +151,12 @@ A `tsconfig.json` supplies `paths`, `baseUrl`, `jsx`, `jsxImportSource`, `jsxFac
 `jsxFragmentFactory`, `experimentalDecorators`, `emitDecoratorMetadata` and `strictNullChecks`.
 
 `--dts` and its two companions write the files with your project's own `typescript` package, so
-it must be installed, and it needs Node. They were run with TypeScript 5.9.3, and each wrote
-`greet.d.ts`. TypeScript 7.0.2, the native version, has no JavaScript API for this to use, and
-the run stopped with `error: --dts: TypeError: Cannot read properties of undefined (reading
-'fileExists')`.
+it must be installed, and it needs Node. They were run with TypeScript 5.9.3 and 7.0.2, the
+native version, and `--dts` and `--dts-dir` wrote `greet.d.ts` and `main.d.ts` with both.
+`--dts-bundle` merges the files with TypeScript's JavaScript API, which version 7 does not
+have, so with 7.0.2 it stops with `error: --dts: --dts-bundle merges declarations with the
+JavaScript API of typescript, which version 7.0.2 does not have; install typescript 5 or 6 for
+it`. With 5.9.3 it wrote one declaration file.
 
 ## Plugins and configuration
 

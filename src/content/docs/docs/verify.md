@@ -131,6 +131,18 @@ sha256sum node_modules/@rathkit/pack-linux-x64-gnu/bin/rkp
 
 The two values match, and the release's signed `SHA256SUMS` covers the tarball.
 
+From `0.1.0-alpha.2`, the signed `SHA256SUMS` also lists the eight npm tarballs and the crate, so what a
+registry serves can be compared with it directly. In a folder that has the release's `SHA256SUMS`:
+
+```sh
+npm pack @rathkit/pack@{{pack}}
+curl -sL https://crates.io/api/v1/crates/rathkit-pack/{{pack}}/download -o rathkit-pack-{{pack}}.crate
+sha256sum --check --ignore-missing SHA256SUMS
+```
+
+`sha256sum` reports `rathkit-pack-{{pack}}.tgz` and `rathkit-pack-{{pack}}.crate` as `OK`. The same check can be made
+for the seven platform packages, with `npm pack @rathkit/pack-linux-x64-gnu@{{pack}}` and so on.
+
 ### Software bill of materials
 
 ```sh

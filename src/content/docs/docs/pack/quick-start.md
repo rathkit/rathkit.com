@@ -7,8 +7,8 @@ sidebar:
 ---
 
 :::caution[Alpha]
-These steps were run against the published `{{pack.tested}}` package on Linux, and the served
-page was checked in Chromium. The package is alpha, so options will change.
+These steps were run against the published `{{pack.tested}}` package on Linux, and the built
+page was checked in Chromium, Firefox and WebKit. The package is alpha, so options will change.
 :::
 
 ## Install
