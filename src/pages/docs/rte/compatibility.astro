@@ -1,0 +1,106 @@
+---
+// The compatibility matrix of RTE, made from docs/compat-matrix.json in the RTE repository when the site builds.
+// Nothing on this page is typed by hand: every version and result comes from that file.
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import MatrixResult from '../../../components/MatrixResult.astro';
+import { ENGINE_LABEL, MATRIX_URL, loadMatrix } from '../../../compat';
+
+const m = await loadMatrix();
+const built = new Date().toISOString().slice(0, 10);
+// A `span` in a text from the file is code, as it is in the repository's own table.
+const parts = (text: string) => text.split('`');
+const SUPPORT = 'https://github.com/rathkit/rte/blob/main/docs/SUPPORT.md';
+---
+<StarlightPage
+  headings={[
+    { depth: 2, slug: 'browsers', text: 'Browsers' },
+    { depth: 2, slug: 'phones-and-tablets', text: 'Phones and tablets' },
+    { depth: 2, slug: 'node', text: 'Node' },
+    { depth: 2, slug: 'frameworks', text: 'Frameworks' },
+  ]}
+  frontmatter={{
+    title: 'RTE compatibility',
+    description: 'Which browsers, Node versions and frameworks RTE is checked against, with the result of the last recorded run of each.',
+    sidebar: { label: 'Compatibility', order: 3 },
+  }}
+>
+  <p>
+    This page shows which browsers, Node versions and frameworks the RTE checks cover, and the result of the last recorded run of
+    each. A cell that no run has filled says "not run". RTE is in beta, so the list can change between releases.
+  </p>
+  <p>
+    The tables are generated from <a href={MATRIX_URL}><code>docs/compat-matrix.json</code></a> in the RTE repository when this site
+    is built (last built {built}), and nothing here is typed by hand. How the file is made and kept in step with the checks, and the
+    policy for how many browser and Node versions are supported, are in
+    <a href={SUPPORT}><code>docs/SUPPORT.md</code></a>, under "Support window" and "Compatibility matrix".
+  </p>
+
+  <h2 id="browsers">Browsers</h2>
+  <div class="matrix" role="region" aria-label="Browsers" tabindex="0">
+    <table>
+      <thead><tr><th>Engine</th><th>Version</th><th>Stands in for</th><th>CI job (Playwright)</th><th>Last recorded run</th></tr></thead>
+      <tbody>
+        {m.browsers.map((b) => (
+          <tr>
+            <td>{ENGINE_LABEL[b.engine] ?? b.engine}</td>
+            <td>{b.version ?? 'not recorded'}</td>
+            <td>{b.standsFor}</td>
+            <td><code>{b.job}</code> ({b.playwright})</td>
+            <td><MatrixResult result={b.result} /></td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+
+  <h2 id="phones-and-tablets">Phones and tablets</h2>
+  <div class="matrix" role="region" aria-label="Phones and tablets" tabindex="0">
+    <table>
+      <thead><tr><th>Device</th><th>Last recorded run</th></tr></thead>
+      <tbody>
+        {m.devices.map((d) => (
+          <tr><td>{d.platform}</td><td><MatrixResult result={d.result} suffix=" in CI" /></td></tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+
+  <h2 id="node">Node</h2>
+  <div class="matrix" role="region" aria-label="Node" tabindex="0">
+    <table>
+      <thead><tr><th>Node</th><th>What runs</th><th>Last recorded run</th></tr></thead>
+      <tbody>
+        {m.node.map((n) => (
+          <tr>
+            <td>{n.ran && n.ran !== n.version ? `${n.version} (${n.ran})` : n.version}</td>
+            <td>{parts(n.role).map((t, i) => (i % 2 ? <code>{t}</code> : t))}</td>
+            <td><MatrixResult result={n.result} /></td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+
+  <h2 id="frameworks">Frameworks</h2>
+  <div class="matrix" role="region" aria-label="Frameworks" tabindex="0">
+    <table>
+      <thead><tr><th>Framework</th><th>Wrapper</th><th>Versions the wrapper accepts</th><th>Version checked</th><th>Last recorded run</th></tr></thead>
+      <tbody>
+        {m.frameworks.map((f) => (
+          <tr>
+            <td>{f.name}</td>
+            <td><code>{f.wrapper}</code></td>
+            <td>{f.supports ? <code>{f.supports}</code> : 'not stated'}</td>
+            <td>{f.checked}</td>
+            <td><MatrixResult result={f.result} /></td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+</StarlightPage>
+
+<style>
+  .matrix { overflow-x: auto; margin-block: 1rem; }
+  .matrix table { margin: 0; }
+</style>

@@ -1,0 +1,12 @@
+---
+// One "last recorded run" cell, worded the way the RTE repository's own table words it (docs/SUPPORT.md).
+import type { Result } from '../compat';
+interface Props { result: Result; suffix?: string }
+const { result: r, suffix = '' } = Astro.props;
+const counts = r.status !== 'not run' && r.passed !== undefined ? `, ${r.passed} of ${r.passed + (r.failed ?? 0)}` : '';
+---
+{r.status === 'not run' ? (
+  <>not run{suffix}</>
+) : (
+  <>{r.status}{counts} ({r.source === 'ci' ? (r.run ? <a href={r.run}>CI</a> : 'CI') : 'a local run'}, {r.date}, {r.commit ? <code>{r.commit.slice(0, 12)}</code> : 'commit not recorded'})</>
+)}

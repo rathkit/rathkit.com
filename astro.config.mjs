@@ -33,6 +33,7 @@ export default defineConfig({
           items: [
             'docs/rte',
             'docs/rte/features',
+            { label: 'Compatibility', link: '/docs/rte/compatibility/' },
             'docs/quick-start',
             { label: 'Framework wrappers', items: ['docs/rte/react', 'docs/rte/vue', 'docs/rte/svelte', 'docs/rte/angular', 'docs/rte/jquery'] },
           ],
