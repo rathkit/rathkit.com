@@ -1,6 +1,6 @@
 ---
 title: Pack documentation
-description: Documentation for Pack, the Rathkit JavaScript and TypeScript bundler written in Rust. The first alphas are on npm and crates.io.
+description: Documentation for Pack, the Rathkit JavaScript and TypeScript bundler written in Rust. The betas are on npm and crates.io.
 sidebar:
   label: Overview
   order: 1
@@ -9,10 +9,10 @@ sidebar:
 Pack is a JavaScript and TypeScript bundler written in Rust, with no dependencies, not even
 crates. The command is `rkp`.
 
-:::caution[Alpha]
-The alpha, `{{pack}}`, is on npm under the `next` tag, so install with `@next`, and on
-crates.io. It is a first look, not something to build on: options, output and plugin support
-can change between releases. Start with the [quick start](/docs/pack/quick-start/), and see
+:::caution[Beta]
+The beta, `{{pack}}`, is on npm under the `next` tag, so install with `@next`, and on
+crates.io. It is early: options, output and plugin support
+can still change between releases. Start with the [quick start](/docs/pack/quick-start/), and see
 [Verify a release](/docs/verify/) to check what you install.
 :::
 
@@ -36,7 +36,7 @@ has what is covered by tests and the behavior worth knowing about.
 
 ## Packages
 
-All eight are published as alphas.
+All eight are published as betas.
 
 | Package | Purpose |
 | --- | --- |
@@ -61,7 +61,7 @@ Node.js 24 or later is needed only when a build uses plugins. Without plugins, P
 start Node. The program is not signed with an operating-system key, so macOS and Windows may
 warn about it. [Verify a release](/docs/verify/) shows what to rely on instead.
 
-## What to expect from an alpha
+## What to expect from a beta
 
 Pack follows semantic versioning with the usual 0.x reading: any release may change options,
 output and plugin support, and the changelog says what changed. The development server, hot

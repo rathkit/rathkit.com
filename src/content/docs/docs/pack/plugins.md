@@ -6,9 +6,9 @@ sidebar:
   order: 4
 ---
 
-:::caution[Alpha]
+:::caution[Beta]
 Every command and file on this page was run against the published `{{pack.tested}}` package on
-Linux. Plugin support can change between alpha releases, and it is claimed only as far as the
+Linux. Plugin support can change between releases, and it is claimed only as far as the
 [list of what is tested](https://github.com/rathkit/pack#what-it-does) in the repository goes.
 A plugin that is not on that list may work. A bug report with its name is welcome.
 :::

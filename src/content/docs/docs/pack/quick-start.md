@@ -6,9 +6,9 @@ sidebar:
   order: 2
 ---
 
-:::caution[Alpha]
+:::caution[Beta]
 These steps were run against the published `{{pack.tested}}` package on Linux, and the built
-page was checked in Chromium, Firefox and WebKit. The package is alpha, so options will change.
+page was checked in Chromium, Firefox and WebKit. The package is beta, so options can still change.
 :::
 
 ## Install
@@ -17,7 +17,7 @@ page was checked in Chromium, Firefox and WebKit. The package is alpha, so optio
 npm install --save-dev @rathkit/pack@next
 ```
 
-The first releases are alpha and are published to the `next` tag only, so install with
+Pre-releases are published to the `next` tag only, so install with
 `@next`. The package gives you the `rkp` command and a JavaScript API. Your package manager
 installs only the platform package that fits your machine.
 
@@ -119,4 +119,4 @@ They run in a Node process, which needs Node.js 24 or later. The
 
 To check what you installed, see [Verify a release](/docs/verify/). Options and behavior in
 full are in the [README](https://github.com/rathkit/pack#readme), and changes between
-alphas are in the [changelog](https://github.com/rathkit/pack/blob/main/CHANGELOG.md).
+releases are in the [changelog](https://github.com/rathkit/pack/blob/main/CHANGELOG.md).

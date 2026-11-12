@@ -6,9 +6,9 @@ sidebar:
   order: 3
 ---
 
-:::caution[Alpha]
+:::caution[Beta]
 Every command on this page was run against the published `{{pack.tested}}` package on Linux.
-Options can change between alpha releases. The list is also what `rkp` accepts: a word that
+Options can change between releases. The list is also what `rkp` accepts: a word that
 starts with a dash and is not an option is an error (exit code 2), never a file name.
 :::
 
