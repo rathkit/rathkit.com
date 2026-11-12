@@ -19,7 +19,7 @@ concurrency:
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     env:
       ASTRO_TELEMETRY_DISABLED: '1'
       FTP_HOST: ${{ secrets.FTP_HOST }}
