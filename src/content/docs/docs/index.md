@@ -1,6 +1,6 @@
 ---
 title: Rathkit documentation
-description: Documentation for RTE, the Rathkit rich text editor, and Pack, the Rathkit bundler. RTE is in beta and Pack is in alpha, both on npm.
+description: Documentation for RTE, the Rathkit rich text editor, and Pack, the Rathkit bundler. RTE and Pack are both in beta, on npm.
 sidebar:
   label: Overview
 ---
@@ -14,7 +14,7 @@ with its own documentation:
 - **[Pack](/docs/pack/)**, a JavaScript and TypeScript bundler written in Rust. Start with
   the [Pack overview](/docs/pack/) or the [Pack quick start](/docs/pack/quick-start/).
 
-RTE is in beta and Pack is in alpha, both on npm, so their APIs and options can still change. Pack is on crates.io too.
+RTE and Pack are both in beta, on npm, so their APIs and options can still change. Pack is on crates.io too.
 
 ## About Rathkit
 

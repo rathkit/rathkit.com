@@ -6,8 +6,8 @@ description: What Rathkit RTE will always include for free, what may cost money,
 RTE is open source with paid options. This page says in advance where that line
 sits, so nothing you rely on can later move behind a paywall.
 
-:::caution[Beta and alpha]
-RTE is in beta and Pack is in alpha. The free packages are published and there are no paid products.
+:::caution[Beta]
+RTE and Pack are in beta. The free packages are published and there are no paid products.
 This page is a statement of intent that we will keep stable. There are no prices here
 because none have been set.
 :::
