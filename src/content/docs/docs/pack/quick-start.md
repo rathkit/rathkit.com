@@ -21,6 +21,14 @@ Pre-releases are published to the `next` tag only, so install with
 `@next`. The package gives you the `rkp` command and a JavaScript API. Your package manager
 installs only the platform package that fits your machine.
 
+pnpm can hold back a version that was published very recently (its `minimumReleaseAge`
+setting), so right after a release `pnpm add -D @rathkit/pack@next` may install the previous
+beta. Name the version to get the newest:
+
+```sh
+pnpm add -D @rathkit/pack@{{pack}}
+```
+
 If you have Rust and would rather build the program from source, install the crate instead.
 It has no dependencies, so the build fetches nothing else:
 
