@@ -149,7 +149,7 @@ export default {
 
 ```sh
 rkp bundle src/main.js --config webpack.config.mjs --outdir out
-node out/bundle.js
+node out/main.js
 cat out/note.txt
 ```
 

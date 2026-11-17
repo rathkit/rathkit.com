@@ -153,10 +153,9 @@ A `tsconfig.json` supplies `paths`, `baseUrl`, `jsx`, `jsxImportSource`, `jsxFac
 `--dts` and its two companions write the files with your project's own `typescript` package, so
 it must be installed, and it needs Node. They were run with TypeScript 5.9.3 and 7.0.2, the
 native version, and `--dts` and `--dts-dir` wrote `greet.d.ts` and `main.d.ts` with both.
-`--dts-bundle` merges the files with TypeScript's JavaScript API, which version 7 does not
-have, so with 7.0.2 it stops with `error: --dts: --dts-bundle merges declarations with the
-JavaScript API of typescript, which version 7.0.2 does not have; install typescript 5 or 6 for
-it`. With 5.9.3 it wrote one declaration file.
+`--dts-bundle` wrote one declaration file with both as well. Version 7 has no JavaScript API,
+so with it Pack takes the declarations that the `tsc` command line writes and merges them
+itself.
 
 ## Plugins and configuration
 
@@ -201,5 +200,5 @@ http://localhost:9999`.
 ## Other commands
 
 `rkp` with no arguments lists the commands used to develop Pack itself (`--parse-check`,
-`--graph`, `--resolve-dump` and others). They are not part of the options above, and they can
+`--graph`, `--scopes` and others). They are not part of the options above, and they can
 change at any time.
