@@ -110,11 +110,12 @@ const result = await build({
   minify: true,
   sourcemap: true,
 });
-console.log(result.files); // the files written
+console.log(result.files); // the output files
 ```
 
-`build(options)` resolves with the files written and any warnings, and rejects with a
-`BuildError` if the build fails. `serve(options)` starts the development server and resolves
+`build(options)` resolves with the output files and any warnings, and rejects with a
+`BuildError` if the build fails. Source maps, declaration files and a metafile are written too,
+but are not in `files`. `serve(options)` starts the development server and resolves
 once it listens. The options are the command's flags, and the package ships types for them.
 
 ## Plugins
