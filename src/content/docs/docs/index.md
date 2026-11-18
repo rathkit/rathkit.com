@@ -10,7 +10,7 @@ with its own documentation:
 
 - **[RTE](/docs/rte/)**, a rich text editor with first-party wrappers for the major
   frameworks. Start with the [RTE overview](/docs/rte/) or the
-  [RTE quick start](/docs/quick-start/).
+  [RTE quick start](/docs/rte/quick-start/).
 - **[Pack](/docs/pack/)**, a JavaScript and TypeScript bundler written in Rust. Start with
   the [Pack overview](/docs/pack/) or the [Pack quick start](/docs/pack/quick-start/).
 

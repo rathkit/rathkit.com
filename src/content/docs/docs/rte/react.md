@@ -72,5 +72,5 @@ against React 19.3.1 on the beta, and against React 18.3.1 (the oldest major ver
 allows) and 19.3.1 on `0.1.0-alpha.4`. Not tested: other React
 versions, server-side rendering, real devices and screen readers.
 
-If you would rather not use the wrapper, the [custom element](/docs/quick-start/) works in React
+If you would rather not use the wrapper, the [custom element](/docs/rte/quick-start/) works in React
 too. To check what you installed, see [Verify a release](/docs/verify/).

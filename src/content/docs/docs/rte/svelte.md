@@ -56,5 +56,5 @@ Firefox and WebKit: typing reaches `onChange`, and the Bold button runs the comm
 on. The wrapper is also checked against a Svelte derived store built on `command`. Not tested: other Svelte versions,
 SvelteKit and server-side rendering, real devices and screen readers.
 
-If you would rather not use the wrapper, the [custom element](/docs/quick-start/) works in Svelte
+If you would rather not use the wrapper, the [custom element](/docs/rte/quick-start/) works in Svelte
 too. To check what you installed, see [Verify a release](/docs/verify/).

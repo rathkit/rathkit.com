@@ -12,7 +12,7 @@ Vue, Svelte, Angular and jQuery, or use the custom element on its own.
 :::caution[Beta]
 The current RTE beta, `{{rte}}`, is on npm under the `next` tag, so install with
 `@next`. It is not for production yet: APIs, options, output and plugin support can still
-change between releases. There is no API reference yet. Start with the [RTE quick start](/docs/quick-start/),
+change between releases. There is no API reference yet. Start with the [RTE quick start](/docs/rte/quick-start/),
 and see [Verify a release](/docs/verify/) to check what you install.
 
 The beta adds a benchmark suite with a stated method, kept in its own repository,

@@ -82,7 +82,7 @@ the page, and it can repair the document after each edit within the same undo st
 
 ## Where to look next
 
-- [RTE quick start](/docs/quick-start/) to put an editor on a page.
+- [RTE quick start](/docs/rte/quick-start/) to put an editor on a page.
 - [RTE overview](/docs/rte/) for the packages.
 - The documents in the [repository](https://github.com/rathkit/rte/tree/main/docs) for each
   area in detail: lists, tables, images, Markdown, footnotes, paste and plugins.

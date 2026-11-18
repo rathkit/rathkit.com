@@ -63,5 +63,5 @@ and shows it on. The whole wrapper check ran against Vue 3.5.44 on the beta, and
 minor version the package allows) and 3.5.44 on `0.1.0-alpha.4`. Not tested: other Vue versions, server-side rendering, real devices and screen
 readers.
 
-If you would rather not use the wrapper, the [custom element](/docs/quick-start/) works in Vue
+If you would rather not use the wrapper, the [custom element](/docs/rte/quick-start/) works in Vue
 too. To check what you installed, see [Verify a release](/docs/verify/).
