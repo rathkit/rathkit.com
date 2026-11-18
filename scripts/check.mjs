@@ -28,6 +28,12 @@ const exists = (path) => existsSync(join(dist, path)) || pages.has(path) || page
 
 for (const [url, html] of pages) {
   if (url === '/404.html') continue;
+  // A redirect page has no content of its own. Check only that it points at a page that exists.
+  const refresh = html.match(/<meta http-equiv="refresh" content="\d+;url=([^"]+)"/);
+  if (refresh) {
+    if (!exists(refresh[1])) fail(`${url}: redirect target missing: ${refresh[1]}`);
+    continue;
+  }
   if (!/<title>[^<]{3,}<\/title>/.test(html)) fail(`${url}: missing title`);
   if (!/<meta name="description" content="[^"]{20,}"/.test(html)) fail(`${url}: missing or short description`);
   if (!/<link rel="canonical" href="https:\/\/rathkit\.com/.test(html)) fail(`${url}: missing canonical`);
