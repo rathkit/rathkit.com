@@ -157,17 +157,18 @@ The crate `rathkit-pack` has no dependencies either, and the source in it is the
 tag:
 
 ```sh
-curl -s https://crates.io/api/v1/crates/rathkit-pack/{{pack}}/dependencies
+curl -s -A rathkit-verify https://crates.io/api/v1/crates/rathkit-pack/{{pack}}/dependencies
 curl -sL https://crates.io/api/v1/crates/rathkit-pack/{{pack}}/download -o rathkit-pack.crate
 tar -xzf rathkit-pack.crate
 git clone --branch v{{pack}} https://github.com/rathkit/pack
 diff -r pack/src rathkit-pack-{{pack}}/src
 ```
 
-The first command prints `{"dependencies":[]}` and `diff` prints nothing. For a version
-published by the release workflow, crates.io also records which workflow run and commit
-published it, in the `trustpub_data` field of
-`https://crates.io/api/v1/crates/rathkit-pack/{{pack}}`.
+The first command prints `{"dependencies":[]}` and `diff` prints nothing. crates.io answers an API
+call that sends no User-Agent with HTTP 403, so the first command sets one with `-A` (any name
+will do); the download needs none. For a version published by the release workflow, crates.io also
+records which workflow run and commit published it, in the `trustpub_data` field of the answer to
+`curl -s -A rathkit-verify https://crates.io/api/v1/crates/rathkit-pack/{{pack}}`.
 
 ### Which versions
 
