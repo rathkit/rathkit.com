@@ -26,6 +26,7 @@ export default defineConfig({
         { icon: 'heart', label: 'Sponsor', href: 'https://github.com/sponsors/rathpc' },
       ],
       routeMiddleware: './src/routeData.ts',
+      components: { Footer: './src/components/DocsFooter.astro' },
       sidebar: [
         { label: 'Rathkit', items: ['docs', 'docs/principles', 'docs/free-and-paid', 'docs/security', 'docs/verify'] },
         {
