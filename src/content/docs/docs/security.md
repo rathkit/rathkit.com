@@ -31,7 +31,7 @@ These are release gates for every Rathkit package. The RTE and Pack betas are he
   are never limited to a paid tier.
 - **Verifiable releases.** Packages are published from CI with provenance, with
   checksums, a signature and an SBOM attached to each release. The SBOM lists zero
-  runtime components. For RTE this holds from `0.1.0-alpha.3` through the beta, `0.2.0-beta.0`: `0.1.0-alpha.0` was published by
+  runtime components. For RTE this holds from `0.1.0-alpha.3` through the beta, `0.3.0-beta.0`: `0.1.0-alpha.0` was published by
   hand and has no provenance, and `0.1.0-alpha.1` and `0.1.0-alpha.2` were never published to
   npm. For Pack it holds from `0.1.0-alpha.1` through the beta, `0.3.0-beta.0`: `0.1.0-alpha.0` was published by hand and has
   no provenance.

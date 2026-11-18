@@ -70,7 +70,7 @@ the package and zero runtime components.
 
 ## Which versions
 
-Use `0.1.0-alpha.3` or later, which includes the beta, `0.2.0-beta.0`. `0.1.0-alpha.0` was published by hand
+Use `0.1.0-alpha.3` or later, which includes the beta, `0.3.0-beta.0`. `0.1.0-alpha.0` was published by hand
 and has no provenance.
 `0.1.0-alpha.1` and `0.1.0-alpha.2` exist only as GitHub pre-releases and were never on npm.
 
