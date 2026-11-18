@@ -1,0 +1,81 @@
+---
+import Site from '../layouts/Site.astro';
+---
+
+<Site
+  title="Terms | Rathkit"
+  description="The terms for using rathkit.com and its docs: how the software licenses relate to these terms, how the Rathkit name may be used, and the limits on what the site promises."
+>
+  <article class="doc">
+    <p class="eyebrow">Terms</p>
+    <h1>Terms of use</h1>
+    <p class="lede">
+      These terms cover rathkit.com and its docs, which are run by Rathkit LLC ("Rathkit"), a New York limited liability company. Last updated November 17, 2026.
+    </p>
+
+    <h2>Using the site</h2>
+    <p>
+      By using the site you agree to these terms. If you do not agree, do not use it. The site needs no account and has no forms. You may read it, link to it and quote it with a link back.
+    </p>
+
+    <h2>The software has its own license</h2>
+    <p>
+      The open-source packages are licensed under the Apache License, Version 2.0. The license text and notice are in each repository, in the files <code>LICENSE</code> and <code>NOTICE</code>. These terms do not change that license, and that license does not change these terms. Any other product or package has its own license terms, shown to you before you accept them.
+    </p>
+
+    <h2>Docs and examples</h2>
+    <p>
+      The docs describe software that is in beta, so options and behavior can change between releases. The docs and their code examples are provided as they are. Check the version you installed and read what the docs say about what has and has not been tested before you rely on a feature.
+    </p>
+
+    <h2>The Rathkit name and artwork</h2>
+    <p>
+      Rathkit and RATHKIT are trademarks of Steven Rathbauer, used under license by Rathkit LLC. The logo, wordmark, favicon, social cards and other brand artwork are not covered by the Apache License. Plain references to the name, such as "built with Rathkit RTE" or a link to this site, are fine. Do not use the name or artwork in a way that suggests your project or product comes from, or is endorsed by, Rathkit. The details are in <a href="https://github.com/rathkit/rathkit.com/blob/main/TRADEMARKS.md">TRADEMARKS.md</a>.
+    </p>
+
+    <h2>Acceptable use</h2>
+    <p>
+      Do not attack, overload or probe the site, and do not scrape it in a way that harms it for others. If you find a security problem, report it as the <a href="/docs/security/">Security page</a> describes.
+    </p>
+
+    <h2>No warranty</h2>
+    <p>
+      The site and its contents are provided as they are, without promises that they are complete, current or free of errors. This does not limit any rights you have under the Apache License or under law that cannot be waived.
+    </p>
+
+    <h2>Limit of liability</h2>
+    <p>
+      To the extent the law allows, Rathkit is not liable for indirect, incidental, special or consequential loss, or for lost profits or data, from your use of the site or its contents. Some places do not allow these limits, so they apply only as far as the law permits.
+    </p>
+
+    <h2>Links to other sites</h2>
+    <p>
+      The site links to GitHub, npm, crates.io, X, Bluesky, Discord and GitHub Sponsors. Those services have their own terms and policies, and Rathkit is not responsible for them.
+    </p>
+
+    <h2>Changes</h2>
+    <p>
+      Rathkit may update these terms. The date at the top shows the latest version, and continued use after a change means you accept it.
+    </p>
+
+    <h2>Governing law</h2>
+    <p>
+      These terms are governed by the laws of the State of New York, without regard to its conflict-of-laws rules. Disputes about them go to the state or federal courts located in New York.
+    </p>
+
+    <h2>Contact</h2>
+    <p>
+      Questions: <a href="mailto:hello@rathkit.com">hello@rathkit.com</a>. See also the <a href="/privacy/">privacy page</a>.
+    </p>
+  </article>
+</Site>
+
+<style>
+  .doc { max-width: 760px; margin: 0 auto; padding: 56px 16px 0; display: flex; flex-direction: column; gap: 14px; }
+  .eyebrow { font: 500 0.75rem var(--rk-font-mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--rk-brass-ink); }
+  h1 { font-size: clamp(2rem, 5.5vw, 3.2rem); font-weight: 800; line-height: 1.05; }
+  .lede { font-size: 1.1rem; color: var(--rk-muted); text-wrap: pretty; }
+  h2 { font-size: 1.3rem; font-weight: 800; margin-top: 22px; }
+  p, li { text-wrap: pretty; }
+  code { font-family: var(--rk-font-mono); font-size: 0.9em; background: var(--rk-sunk); padding: 1px 5px; }
+</style>
