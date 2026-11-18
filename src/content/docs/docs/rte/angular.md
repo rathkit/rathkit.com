@@ -7,7 +7,7 @@ sidebar:
 ---
 
 :::caution[Beta]
-These steps were run against the published `{{rte.tested}}` packages with Angular 22.2.3 in
+These steps were run against `{{rte.tested}}`, built from the repository and not installed from npm, with Angular 22.2.3 in
 Chromium, Firefox and WebKit. Angular 21.2.26 and 20.3.35, the oldest major version the wrapper
 allows, were last run on `0.1.0-alpha.4`. The packages are beta, so APIs can still change.
 :::

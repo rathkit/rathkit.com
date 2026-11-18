@@ -7,7 +7,7 @@ sidebar:
 ---
 
 :::caution[Beta]
-These steps were run against the published `{{rte.tested}}` packages with jQuery 4.0.0 in
+These steps were run against `{{rte.tested}}`, built from the repository and not installed from npm, with jQuery 4.0.0 in
 Chromium, Firefox and WebKit. jQuery 3.7.1, the oldest version the wrapper allows, was last run on
 `0.1.0-alpha.4`. The packages are beta, so APIs can still change.
 :::

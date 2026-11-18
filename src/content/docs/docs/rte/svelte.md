@@ -7,7 +7,7 @@ sidebar:
 ---
 
 :::caution[Beta]
-These steps were run against the published `{{rte.tested}}` packages with Svelte 5.57.2 in
+These steps were run against `{{rte.tested}}`, built from the repository and not installed from npm, with Svelte 5.57.2 in
 Chromium, Firefox and WebKit. The packages are beta, so APIs can still change.
 :::
 

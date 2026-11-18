@@ -7,7 +7,7 @@ sidebar:
 ---
 
 :::caution[Beta]
-These steps were run against the published `{{rte.tested}}` packages with Vue 3.5.44 in
+These steps were run against `{{rte.tested}}`, built from the repository and not installed from npm, with Vue 3.5.44 in
 Chromium, Firefox and WebKit. Vue 3.4.38, the oldest minor version the wrapper allows, was last run
 on `0.1.0-alpha.4`. The packages are beta, so APIs can still change.
 :::
