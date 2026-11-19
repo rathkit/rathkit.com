@@ -197,6 +197,26 @@ Each of these started a server that answered with status 200: the defaults, `--p
 --https-key key.pem`, `--mode staging --platform-browser` and `--cors-origin
 http://localhost:9999`.
 
+## What Pack writes and deletes
+
+Pack writes the files you ask for, changes the files you point it at, and deletes none of yours. The Pack repository checks this list with a script
+that runs each command in a folder of its own, compares the whole folder before and after, and fails if anything appears, changes or goes that is
+not listed.
+
+- **`rkp bundle`** writes the file of `--outfile`, or the files in `--outdir`, and what the options ask for next to them: `.map` files
+  (`--sourcemap`), `.LEGAL.txt` (`--legal-comments=linked` or `external`), `.d.ts` files (`--dts`; `--dts-dir` names their folder), the file of
+  `--metafile`, the files of a module federation build, and, for a page, the page, its scripts and style sheets, the images it names and the files
+  of `public/`.
+- **It never empties an output folder.** A file that is already there stays unless the build writes a file of the same name.
+- **A build that would write over one of its own input files stops** with an error; `--allow-overwrite` lets it.
+- **`--write-exports[=FILE]`** edits `main`, `module`, `types` and `exports` in the `package.json` (or the file named) and keeps its other fields.
+- **`rkp migrate`** prints; with `--write` it adds scripts (`build:rkp`, `dev:rkp`) to `package.json` and never changes a script that is there.
+  **`rkp analyze`** prints, or writes the page named by `--outfile`.
+- **`rkp serve`** writes nothing and keeps pages in memory. With `--https` it makes a certificate and private key for `localhost` once and keeps
+  them (mode 0600) in your cache folder: the one thing Pack writes outside the project without being told a name.
+- **The minifier cache** is off unless `RATHKIT_CACHE=on`; then it writes under `$XDG_CACHE_HOME/rathkit/minify` (or `RATHKIT_CACHE_DIR`), keeps that
+  folder under 512 MB by removing its oldest entries, and deletes nothing else.
+
 ## Other commands
 
 `rkp` with no arguments lists the commands used to develop Pack itself (`--parse-check`,
