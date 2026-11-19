@@ -7,8 +7,6 @@ export default defineConfig({
   site: 'https://rathkit.com',
   trailingSlash: 'always',
   devToolbar: { enabled: false },
-  // The RTE quick start moved under /docs/rte/. Published READMEs link to the old address.
-  redirects: { '/docs/quick-start': '/docs/rte/quick-start/' },
   integrations: [
     starlight({
       title: 'Rathkit',
